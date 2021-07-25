@@ -1,0 +1,45 @@
+/* Bootstrap custom variable overrides */
+
+// Typography
+$font-size-base: 1.125rem;
+
+// 'native font stack' for sans via https://getbootstrap.com/docs/5.0/content/reboot/#native-font-stack
+$font-family-sans-serif:
+  // custom theme font
+  Overpass,
+  // Cross-platform generic font family (default user interface font)
+  system-ui,
+  // Safari for macOS and iOS (San Francisco)
+  -apple-system, BlinkMacSystemFont,
+  // Windows
+  "Segoe UI",
+  // Android
+  Roboto,
+  // Basic web fallback
+  "Helvetica Neue", Arial,
+  // Linux
+  "Noto Sans",
+  "Liberation Sans",
+  Oxygen-Sans, Ubuntu,
+  // Sans serif fallback
+  sans-serif,
+  // Emoji fonts
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+
+$font-family-base: $font-family-sans-serif;
+
+// handbrush / special / emphasis / impact font stack
+$font-family-handbrush: "Permanent Marker", Besom, Fjord, Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+
+// Features
+$enable-shadows: true;
+$enable-negative-margins: true;
+
+// init colors for some vars
+$primary: #51A39F;
+// $secondary: #9883E5;
+$secondary: #955E42;
+$success: #37B800;
+$info: #0075F2;
+$warning: #F9E900;
+$danger: #DD1C1A

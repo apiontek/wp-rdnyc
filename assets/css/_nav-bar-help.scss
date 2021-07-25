@@ -1,0 +1,84 @@
+// navbar-brand coloring
+.navbar-dark {
+  a {
+    &.navbar-brand {
+      color: $gray-300;
+      &:hover {
+        color: $gray-300;
+      }
+    }
+  }
+}
+
+// navbar widget social icon coloring
+// #block-7 > ul > li.wp-social-link.wp-block-social-link > a
+.navbar-dark {
+  .widget_block {
+    ul {
+      &.wp-block-social-links {
+        &.is-style-logos-only {
+          li {
+            &.wp-social-link {
+              &.wp-block-social-link {
+                a {
+                  &.wp-block-social-link-anchor {
+                    color: $gray-300;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// navbar menu layout
+.navbar-expand-lg {
+  .nav-item {
+    // margin-left: 2px;
+    a {
+      &.nav-link {
+        // padding: 0 0 0 6px;
+        // margin: 8px 0 8px 0;
+        // border-left: 6px transparent solid;
+        &.active {
+          // border-left: 6px $secondary solid;
+          // border-bottom: none;
+        }
+        &:hover, &:active {
+          // color: $primary !important;
+          // border-left: 6px $secondary solid;
+          // border-bottom: none;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .navbar-expand-lg {
+    .nav-item {
+      // margin-left: 0;
+      a {
+        &.nav-link {
+          // padding: 0 0 2px 0;
+          // margin: 0 12px 0 12px;
+          // border-left: none;
+          // border-top: 6px transparent solid;
+          // border-bottom: 6px transparent solid;
+          &.active {
+            // border-left: none;
+            // border-bottom: 6px $secondary solid;
+          }
+          &:hover, &:active {
+            // color: $primary !important;
+            // border-left: none;
+            // border-bottom: 6px $secondary solid;
+          }
+        }
+      }
+    }
+  }
+}

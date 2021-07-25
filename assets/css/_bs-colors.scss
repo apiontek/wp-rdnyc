@@ -1,0 +1,65 @@
+// Colors
+// -- now defined in bs-custom --
+// $primary: #e48663;
+// $secondary: #00b0b0;
+// $success: #99c24d;
+// $info: #b489c7;
+// $warning: #f4d35e;
+
+// gray scale based off 'pale silver' #bebfb0 which was text color in Lester's original design
+// however, i think a lighter text is more readable, going 1 lighter for this design
+$white: #fff;
+$gray-010: #e3dfdd;
+$gray-100: #d1cac7;
+$gray-200: #beb5b0;
+$gray-300: #aca09a;
+$gray-400: #9a8b84;
+$gray-500: #87776e;
+$gray-600: #70635c;
+$gray-700: #5a4f49;
+$gray-750: #4f4540;
+$gray-800: #433b37;
+$gray-900: #2d2825;
+$black: #000;
+
+// spaceblue is based on coolors.co 'space cadet' #212c40 which was bg color in Lester's original design
+// background will be spaceblue-800
+
+$spaceblue-100: #aebcd5;
+$spaceblue-200: #93a6c8;
+$spaceblue-300: #788fba;
+$spaceblue-400: #5d79ac;
+$spaceblue-500: #4c6594;
+$spaceblue-600: #3e5379;
+$spaceblue-700: #31415e;
+$spaceblue-800: #212c40;
+$spaceblue-900: #151c28;
+
+$light: $spaceblue-200;
+$dark: $spaceblue-800;
+
+
+// Create your own map
+$custom-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+  "gray": $gray-600,
+  "gray-dark": $gray-800,
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+// misc
+$navbar-dark-color: rgba($white, 0.75);
+$navbar-dark-hover-color: rgba($white, 0.9);
+$navbar-dark-active-color: $white;
+$navbar-dark-disabled-color: rgba($white, 0.45);
+$navbar-dark-toggler-border-color: rgba($white, 0.3);
+$component-active-bg: $primary;
