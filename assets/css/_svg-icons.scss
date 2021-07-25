@@ -20,20 +20,29 @@
   position: relative;
 }
 
-// for navbar-brand logo, could be used for other non-icon SVGs with an extra class to controll the size
-.logo {
-  display: inline-flex;
-  align-self: center;
-}
+// // for navbar-brand logo, could be used for other non-icon SVGs with an extra class to controll the size
+// .logo {
+//   display: inline-flex;
+//   align-self: center;
+// }
 
-.logo svg,
-.logo img {
-  height: 5.3rem;
-  fill: currentColor;
-}
+// .logo svg,
+// .logo img {
+//   height: 5.3rem;
+//   fill: currentColor;
+// }
 
-.logo.baseline svg,
-.logo img {
-  top: 0.15em;
-  position: relative;
+// .logo.baseline svg,
+// .logo img {
+//   top: 0.15em;
+//   position: relative;
+// }
+
+svg {
+  &.img {
+    fill: currentColor;
+    &.header-logo {
+      height: 5.3rem;
+    }
+  }
 }
