@@ -51,7 +51,11 @@ namespace WP_RDNYC;
         // printf( '<span class="font-handbrush">%1$s</span>',
         //   esc_html( get_bloginfo( 'name' ) )
         // );
-        echo svg_logo_use("rdnyc-logo", "", "Recovery Dharma New York City");
+        // echo svg_logo_use("rdnyc-logo", "", "Recovery Dharma New York City");
+        echo inline_svg( 'svg-rdnyc-logo', 'logo', '', 'Recovery Dharma New York City', true, false );
+        // echo '<div class="logo">' . file_get_contents( get_template_directory_uri() . '/dist/images/svg-rdnyc-logo.svg' ) . '</div>';
+        // echo str_replace("{{class-name}}", 'logo', 
+        //   file_get_contents( get_template_directory_uri() . '/dist/images/svg-rdnyc-logo.svg' ));
 
         echo "</a>";
       ?>

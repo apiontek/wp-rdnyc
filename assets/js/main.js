@@ -7,12 +7,12 @@ import '../css/app.scss'
 import "../raw/rdnyc-logo.svg"; // rdnyc logo
 // other:
 import "../../node_modules/@mdi/svg/svg/magnify.svg"; // search form button icon
-// import "../../node_modules/@mdi/svg/svg/home.svg";
+import "../../node_modules/@mdi/svg/svg/home.svg";
 // import "../../node_modules/@mdi/svg/svg/information.svg";
 // import "../../node_modules/@mdi/svg/svg/account.svg";
 // import "../../node_modules/@mdi/svg/svg/briefcase-account.svg";
-// import "../../node_modules/@mdi/svg/svg/zip-disk.svg";
-// import "../../node_modules/@mdi/svg/svg/typewriter.svg";
+import "../../node_modules/@mdi/svg/svg/zip-disk.svg";
+import "../../node_modules/@mdi/svg/svg/typewriter.svg";
 // import "../../node_modules/@mdi/svg/svg/calendar-clock.svg";
 // import "../../node_modules/@mdi/svg/svg/tag-multiple.svg";
 // import "../../node_modules/@mdi/svg/svg/rss.svg";
