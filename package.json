@@ -13,9 +13,9 @@
   "dependencies": {
     "@fontsource/overpass": "^4.x",
     "@fontsource/permanent-marker": "^4.x",
-    "@mdi/svg": "^5.x",
     "@popperjs/core": "^2.x",
     "bootstrap": "^5.x",
+    "bootstrap-icons": "^1.5.0",
     "hamburgers": "^1.x",
     "regenerator": "^0.14.7"
   },

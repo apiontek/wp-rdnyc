@@ -89,7 +89,7 @@ namespace WP_RDNYC;
           // echo '<section>';
           wp_nav_menu([
             'theme_location'  => 'navbar-main-menu',
-            'depth' => 1,
+            'depth' => 2,
             'menu'  => 'navbar-main-menu',
             'container'       => 'div',
             'container_id' => 'top-navbar-grid-main-menu-outer',
@@ -101,70 +101,4 @@ namespace WP_RDNYC;
         }
       ?>
   
-  </nav>
-
-
-
-  <nav class="navbar navbar-expand-lg navbar-dark d-none">
-
-    <div id="navbarInnerContainer">
-
-      <h1>
-        <!-- my-0 py-0 -->
-        <?php
-          printf( '<a class="navbar-brand" href="%1$s" rel="home">',
-            esc_url( home_url( '/' ) )
-          );
-
-          echo inline_svg( 'svg-rdnyc-logo',
-              array(
-                'svg_class' => 'img header-logo',
-                'svg_title' => 'Recovery Dharma New York City',
-                'svg_role_img' => true,
-                'svg_aria_hidden' => false
-              )
-            );
-
-          echo "</a>";
-        ?>
-      </h1>
-
-      <!-- collapsed navbar-toggler -->
-      <!-- <button class="hamburger hamburger--squeeze" id="navbarSupportedContentToggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-      </button> -->
-
-      <?php
-        // using widget to include social icons, so they can be edited by wordpress users
-        if ( is_active_sidebar( 'navbar-socialicon-widget' ) ) :
-          dynamic_sidebar( 'navbar-socialicon-widget' );
-        endif;
-      ?>
-
-    </div>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-      <?php
-        // main navigation menu
-        if ( has_nav_menu( 'navbar-main-menu' ) ) {
-          // echo '<section>';
-          wp_nav_menu([
-            'theme_location'  => 'navbar-main-menu',
-            'depth' => 1,
-            'menu'  => 'navbar-main-menu',
-            // 'container'       => 'div',
-            // 'container_id' => 'section-navbar-main-menu',
-            'menu_class'      => 'navbar-nav',
-            'menu_item_class' => 'nav-item',
-            'link_class'      => 'nav-link'
-          ]);
-          // echo '</section>';
-        }
-      ?>
-
-    </div>
-
   </nav>
