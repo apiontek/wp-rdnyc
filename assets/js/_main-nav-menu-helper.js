@@ -1,13 +1,15 @@
 /**
  * main nav menu helper
  */
-var mainMenuDropdownList = [].slice.call(document.querySelectorAll('li.menu-item.menu-item-has-children'));
+var mainMenuDropdownList = [].slice.call(document.querySelectorAll('li.menu-item.menu-item-has-children > a.top-navbar-grid-main-menu-item-link'));
 
-mainMenuDropdownList.forEach((el) => {
-  el.addEventListener("click", (e) => {
+mainMenuDropdownList.forEach((thisMenuLink) => {
+  thisMenuLink.addEventListener("click", (e) => {
+    e.preventDefault();   // Cancel the native event
+    e.stopPropagation();  // Don't bubble/capture the event any further
+
     // get relevant elements and note if menu is already shown
-    var thisMenuLink = el.querySelector('a.top-navbar-grid-main-menu-item-link');
-    var thisSubMenu = el.querySelector('ul.sub-menu');
+    var thisSubMenu = thisMenuLink.parentElement.querySelector('ul.sub-menu');
     var thisElShown = thisSubMenu.classList.contains('show');
 
     // un-show all menus

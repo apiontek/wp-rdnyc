@@ -145,54 +145,51 @@ nav#top-navbar-grid-outer {
           @extend .dropdown;
           & > a.top-navbar-grid-main-menu-item-link {
             @extend .dropdown-toggle;
-            &:hover {
-              @extend .text-decoration-none;
-            }
+            cursor: pointer;
             &.shown {
               color: $primary;
+              text-decoration: none !important;
+              &:hover {
+                text-decoration: none !important;
+              }
             }
           }
           ul.sub-menu {
             display: none;
+            margin: 0;
             color: $gray-300;
             list-style: none;
             min-width: 10rem;
             background-color: tint-color($spaceblue-800, 5%);
+            border-radius: 0.25rem;
+            font-size: 1rem;
             &.show {
               display: block;
             }
             @include media-breakpoint-down(lg) {
               position: relative;
-              color: $gray-300;
-              // background-color: shade-color($gray-900, 50%);
+              margin-top: 0.25em;
               padding: 0.25em 1em 0 1em;
-              margin: 0;
               background-clip: border-box;
-              word-wrap: break-word;
               border: 1px solid $gray-700;
-              border-radius: 0.25rem;
+              word-wrap: break-word;
             }
             @include media-breakpoint-up(lg) {
-              margin: 0;
-              border: 1px solid rgba(0,0,0,0.15);
-              border-color: rgba(0, 0, 0, 0.15);
-              border-radius: 0.25rem;
-              box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
               position: absolute;
-              z-index: 1000;
-              inset: -1em 0px auto auto;
-              transform: translate(0px, 40px);
               padding: .5rem 0;
-              font-size: 1rem;
-              text-align: left;
               background-clip: padding-box;
+              border: 1px solid rgba(0,0,0,0.15);
+              box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+              z-index: 1000;
+              inset: 1.5em 0px auto auto;
+              text-align: left;
               li.menu-item {
                 padding: 8px 0 8px 0 !important;
                 a.top-navbar-grid-main-menu-item-link {
                   text-align: left;
                   display: block;
                   width: 100%;
-                  padding: .25rem 1rem;
+                  padding: .25rem 1rem 0 1rem;
                   clear: both;
                   font-weight: inherit;
                   white-space: nowrap;
