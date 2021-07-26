@@ -1,7 +1,7 @@
 <?php
 
 /**
- * example inline SVG function args array supported keys
+ * example inline SVG function atts array supported keys
  */
 // array(
 //   'div_class' => 'icon baseline', // or 'img logo' or something
@@ -16,13 +16,15 @@
  * desired SVG must exist in ./dist/images,
  * preferably by import in main.js and processing by webpack
  */
-function inline_svg( $svg_name, $args = array() ) {
-  // load args or defaults
-  $div_class = array_key_exists( 'div_class', $args ) ? $args['div_class'] : '';
-  $svg_class = array_key_exists( 'svg_class', $args ) ? $args['svg_class'] : '';
-  $svg_title = array_key_exists( 'svg_title', $args ) ? $args['svg_title'] : '';
-  $svg_role_img = array_key_exists( 'svg_role_img', $args ) ? $args['svg_role_img'] : false;
-  $svg_aria_hidden = array_key_exists( 'svg_aria_hidden', $args ) ? $args['svg_aria_hidden'] : true;
+function inline_svg( $svg_name, $atts = array() ) {
+  // load atts or set defaults
+  extract(shortcode_atts(array(
+    'div_class' => '',
+    'svg_class' => '',
+    'svg_title' => '',
+    'svg_role_img' => false,
+    'svg_aria_hidden' => true,
+  ), $atts));
 
   // load initial svg content
   $svg_content = file_get_contents( get_template_directory_uri() . '/dist/images/' . $svg_name . '.svg' );

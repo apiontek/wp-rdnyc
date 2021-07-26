@@ -3,7 +3,6 @@ const glob                  = require("glob-all");
 const MiniCssExtractPlugin  = require('mini-css-extract-plugin');
 const CssMinimizerPlugin    = require("css-minimizer-webpack-plugin");
 const CopyWebpackPlugin     = require('copy-webpack-plugin');
-// const SpriteLoaderPlugin    = require("svg-sprite-loader/plugin");
 const BrowserSyncPlugin     = require('browser-sync-webpack-plugin');
 const PurgecssPlugin        = require("purgecss-webpack-plugin");
 
@@ -77,30 +76,6 @@ const config = {
           }
         ],
       },
-      // {
-      //   test: /\.svg$/,
-      //   loader: "svg-sprite-loader",
-      //   options: {
-      //     extract: true,
-      //     spriteFilename: "icon-sprites.svg",
-      //     publicPath: "./images/",
-      //     symbolId: (filePath) => {
-      //       if (filePath.includes("bootstrap-icons")) {
-      //         return `bi-${path.basename(filePath).slice(0, -4)}`;
-      //       } else if (filePath.includes("@mdi")) {
-      //         return `mdi-${path.basename(filePath).slice(0, -4)}`;
-      //       } else if (filePath.includes("heroicons")) {
-      //         if (filePath.includes("outline")) {
-      //           return `hio-${path.basename(filePath).slice(0, -4)}`;
-      //         } else {
-      //           return `his-${path.basename(filePath).slice(0, -4)}`;
-      //         }
-      //       } else {
-      //         return `${path.basename(filePath).slice(0, -4)}`;
-      //       }
-      //     },
-      //   },
-      // },
     ]
   },
   optimization: {
@@ -115,7 +90,6 @@ const config = {
   },
   plugins: [
     new MiniCssExtractPlugin({ filename: `[name]${prefix}.css` }),
-    // new SpriteLoaderPlugin({ plainSprite: true }),
     new CopyWebpackPlugin({
       patterns: [{
                           from: './assets/images/',

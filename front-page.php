@@ -9,7 +9,7 @@
 namespace WP_RDNYC;
 
 get_header(); ?>
-<main class="container d-flex justify-content-center">
+<main class="container-fluid">
   <div class="d-flex flex-column-reverse flex-lg-row align-items-lg-end mt-sm-3 mt-md-4 pt-md-4 mt-lg-5 pt-lg-5 pb-5" id="tek-front-page">
 
   <?php

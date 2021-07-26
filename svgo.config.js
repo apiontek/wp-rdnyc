@@ -17,7 +17,7 @@ module.exports = {
     'removeHiddenElems',
     'removeEmptyText',
     'removeEmptyContainers',
-    'removeViewBox',
+    // 'removeViewBox',
     'cleanupEnableBackground',
     'minifyStyles',
     // 'convertStyleToAttrs',
@@ -41,7 +41,7 @@ module.exports = {
     'convertEllipseToCircle',
     'sortAttrs',
     'sortDefsChildren',
-    // 'removeDimensions',
+    'removeDimensions',
     // 'removeAttrs',
     {
       name: 'removeAttrs',

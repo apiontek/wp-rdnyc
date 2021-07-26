@@ -9,7 +9,7 @@
 namespace WP_RDNYC;
 
 get_header(); ?>
-<main class="container d-flex justify-content-center">
+<main class="container-fluid d-flex">
   <div class="col-12 col-md-10 col-lg-9 col-xl-8 col-xxl-7 border-bottom border-gray pb-4 mb-3">
 
   <?php

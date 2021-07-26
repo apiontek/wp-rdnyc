@@ -39,60 +39,132 @@ namespace WP_RDNYC;
 
 <body <?php body_class(); ?> itemscope itemtype="https://schema.org/WebPage">
 
-<nav class="navbar navbar-expand-lg navbar-dark px-1 px-sm-2 px-lg-3 px-xl-4 px-xxl-5 pt-5 pb-3 ">
-  <div class="container-fluid">
+  <nav id="top-navbar-grid-outer">
 
-    <h1 class="my-0 py-0 lh-base">
-      <?php
-        printf( '<a class="navbar-brand" href="%1$s" rel="home">',
-          esc_url( home_url( '/' ) )
-        );
-
-        echo inline_svg( 'svg-rdnyc-logo',
-            array(
-              'svg_class' => 'img header-logo',
-              'svg_title' => 'Recovery Dharma New York City',
-              'svg_role_img' => true,
-              'svg_aria_hidden' => false
-            )
+    <div id="top-navbar-grid-brand-outer">
+      <h1>
+        <!-- my-0 py-0 -->
+        <?php
+          printf( '<a id="top-navbar-grid-brand-link" href="%1$s" rel="home">',
+            esc_url( home_url( '/' ) )
           );
 
-        echo "</a>";
-      ?>
-    </h1>
+          echo inline_svg( 'svg-rdnyc-logo',
+              array(
+                'svg_class' => 'img header-logo',
+                'svg_title' => 'Recovery Dharma New York City',
+                'svg_role_img' => true,
+                'svg_aria_hidden' => false
+              )
+            );
 
-    <button class="hamburger hamburger--vortex collapsed navbar-toggler" id="navbarSupportedContentToggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="hamburger-box d-flex">
-        <span class="hamburger-inner"></span>
-      </span>
-    </button>
+          echo "</a>";
+        ?>
+      </h1>
+    </div>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div id="top-navbar-grid-toggle-button-outer">
+      <button class="hamburger hamburger--squeeze" id="top-navbar-grid-toggle-button"
+        type="button" data-bs-toggle="collapse" data-bs-target="#top-navbar-grid-main-menu-outer"
+        aria-controls="top-navbar-grid-main-menu-outer" aria-expanded="false" aria-label="Toggle navigation"
+      >
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+    </div>
 
-
-    <?php
-            if ( is_active_sidebar( 'navbar-socialicon-widget' ) ) :
-              dynamic_sidebar( 'navbar-socialicon-widget' );
-            endif;
-            ?>
-
-
+    <div id="top-navbar-grid-socialicon-widget-outer">
       <?php
+          // using widget to include social icons, so they can be edited by wordpress users
+          if ( is_active_sidebar( 'navbar-socialicon-widget' ) ) :
+            dynamic_sidebar( 'navbar-socialicon-widget' );
+          endif;
+        ?>
+    </div>
+    
+    <?php
+        // main navigation menu
         if ( has_nav_menu( 'navbar-main-menu' ) ) {
+          // echo '<section>';
           wp_nav_menu([
             'theme_location'  => 'navbar-main-menu',
             'depth' => 1,
             'menu'  => 'navbar-main-menu',
-            'container'       => '',
-            'container_class' => '',
+            'container'       => 'div',
+            'container_id' => 'top-navbar-grid-main-menu-outer',
+            'menu_class'      => 'top-navbar-grid-main-menu',
+            'menu_item_class' => 'top-navbar-grid-main-menu-item',
+            'link_class'      => 'top-navbar-grid-main-menu-item-link'
+          ]);
+          // echo '</section>';
+        }
+      ?>
+  
+  </nav>
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark d-none">
+
+    <div id="navbarInnerContainer">
+
+      <h1>
+        <!-- my-0 py-0 -->
+        <?php
+          printf( '<a class="navbar-brand" href="%1$s" rel="home">',
+            esc_url( home_url( '/' ) )
+          );
+
+          echo inline_svg( 'svg-rdnyc-logo',
+              array(
+                'svg_class' => 'img header-logo',
+                'svg_title' => 'Recovery Dharma New York City',
+                'svg_role_img' => true,
+                'svg_aria_hidden' => false
+              )
+            );
+
+          echo "</a>";
+        ?>
+      </h1>
+
+      <!-- collapsed navbar-toggler -->
+      <!-- <button class="hamburger hamburger--squeeze" id="navbarSupportedContentToggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button> -->
+
+      <?php
+        // using widget to include social icons, so they can be edited by wordpress users
+        if ( is_active_sidebar( 'navbar-socialicon-widget' ) ) :
+          dynamic_sidebar( 'navbar-socialicon-widget' );
+        endif;
+      ?>
+
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <?php
+        // main navigation menu
+        if ( has_nav_menu( 'navbar-main-menu' ) ) {
+          // echo '<section>';
+          wp_nav_menu([
+            'theme_location'  => 'navbar-main-menu',
+            'depth' => 1,
+            'menu'  => 'navbar-main-menu',
+            // 'container'       => 'div',
+            // 'container_id' => 'section-navbar-main-menu',
             'menu_class'      => 'navbar-nav',
             'menu_item_class' => 'nav-item',
-            'link_class'      => 'nav-link font-monospace fs-6'
+            'link_class'      => 'nav-link'
           ]);
+          // echo '</section>';
         }
       ?>
 
     </div>
 
-  </div>
-</nav>
+  </nav>

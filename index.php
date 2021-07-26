@@ -9,7 +9,7 @@
 namespace WP_RDNYC;
 
 get_header(); ?>
-<main class="container d-flex justify-content-center">
+<main class="container-fluid">
   <div class="col-12 col-md-10 col-lg-9 col-xl-8 col-xxl-7 pb-2 mb-4 mt-3">
 
     <?php if (is_archive()) : ?>
