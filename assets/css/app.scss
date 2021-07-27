@@ -45,15 +45,15 @@ body {
 //     }
 //   }
 // }
-.wp-block-separator {
-  border-top: none !important;
-  border-bottom: none !important;
-}
+// .wp-block-separator {
+//   border-top: none !important;
+//   border-bottom: none !important;
+// }
 
-/* more */
-.border-gray-900 {
-  border-color: $gray-900 !important;
-}
+// /* more */
+// .border-gray-900 {
+//   border-color: $gray-900 !important;
+// }
 .text-gray-200 {
   color: $gray-200;
 }
@@ -66,77 +66,28 @@ body {
 .text-gray-500 {
   color: $gray-500;
 }
-.border-10 {
-  border-width: 10px !important;
-}
-.border-20 {
-  border-width: 20px !important;
-}
-.font-handbrush {
-  font-family: $font-family-handbrush;
-}
-.fw-500 {
-  font-weight: 500;
-}
-.fw-600 {
-  font-weight: 600;
-}
-.fs-larger {
-  font-size: larger;
-}
-.fs-smaller {
-  font-size: smaller;
-}
-.tek-fixed-footer {
-  @extend .bg-dark;
-  @extend .bottom-0;
-  @extend .end-0;
-  @extend .position-fixed;
-  font-size: 14px !important;
-  border-top-left-radius: 0.3rem !important;
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-.tek-subtitle {
-  @extend .fs-5;
-  @extend .font-monospace;
-  @extend .text-gray-300;
-  @extend .mb-0;
-  // margin-top: -0.5rem;
-}
-.tek-border-bottom-gray-dashed {
-  @extend .border-bottom;
-  // @extend .border-gray;
-  border-bottom-color: $gray-500 !important;
-  border-bottom-style: dashed !important;
-}
+// .border-10 {
+//   border-width: 10px !important;
+// }
+// .border-20 {
+//   border-width: 20px !important;
+// }
+// .font-handbrush {
+//   font-family: $font-family-handbrush;
+// }
+// .fw-500 {
+//   font-weight: 500;
+// }
+// .fw-600 {
+//   font-weight: 600;
+// }
+// .fs-larger {
+//   font-size: larger;
+// }
+// .fs-smaller {
+//   font-size: smaller;
+// }
 
-/* front page styles */
-#tek-front-page img.wp-post-image {
-  @extend .img-fluid;
-  @extend .border;
-  // @extend .border-20;
-  @extend .border-gray-900;
-  @extend .rounded-2;
-  border-width: 18px !important;
-  width: 100%;
-}
-#tek-front-page h2, header h2 {
-  @extend .fs-2;
-  @extend .fw-600;
-  @extend .mb-0;
-}
-
-
-
-/* social icons */
-#social-icons .link-light {
-  border-bottom: none;
-  color: $gray-100;
-  &:hover {
-    color: $primary;
-  }
-}
 
 /* blockquote handling */
 blockquote {
@@ -149,11 +100,6 @@ blockquote {
     @extend .ps-3;
     @extend .py-2;
     background-color: $gray-750;
-    &.tek-bq-lg {
-      p {
-        font-size: 1.375rem;
-      }
-    }
     p {
       @extend .blockquote;
       font-size: 1em;
@@ -177,56 +123,58 @@ blockquote {
 }
 
 
-/* blog */
-.post-title a {
-  color: $gray-100;
-  text-decoration: none;
-  border-bottom: none;
-  &:hover {
-    color: $primary;
-    // border-bottom: $secondary 3px solid;
-    text-decoration: underline;
-    text-decoration-color: $secondary;
-  }
-}
-.post-lede,
-.post-body {
-  h2, h3, h4, h5, h6 {
-    color: $gray-200;
-    margin-top: 2rem;
-  }
-}
-.post li {
-  line-height: 1.75rem;
-}
-.more-link {
-  @extend .fs-6;
-}
+// /* blog */
+// .post-title a {
+//   color: $gray-100;
+//   text-decoration: none;
+//   border-bottom: none;
+//   &:hover {
+//     color: $primary;
+//     // border-bottom: $secondary 3px solid;
+//     text-decoration: underline;
+//     text-decoration-color: $secondary;
+//   }
+// }
+// .post-lede,
+// .post-body {
+//   h2, h3, h4, h5, h6 {
+//     color: $gray-200;
+//     margin-top: 2rem;
+//   }
+// }
+// .post li {
+//   line-height: 1.75rem;
+// }
+// .more-link {
+//   @extend .fs-6;
+// }
 
-/* widget styling */
-#footer-widgets {
-  background-color: $gray-750;
-  border-radius: .5em;
-  .widgettitle {
-    @extend .fs-4;
-  }
-  .wp-block-group {
-    @extend .px-3;
-    @extend .py-3;
-    max-width: 25rem;
-  }
-  ul {
-    padding-inline-start: 2rem;
-  }
-  .wp-block-loginout {
-    display: list-item;
-    margin-left: 2rem;
-    list-style-type: disc;
-  }
-}
-.wp-block-tag-cloud {
-  @extend .mb-0;
-}
+// /* widget styling */
+// #footer-widgets {
+//   background-color: $gray-750;
+//   border-radius: .5em;
+//   .widgettitle {
+//     @extend .fs-4;
+//   }
+//   .wp-block-group {
+//     @extend .px-3;
+//     @extend .py-3;
+//     max-width: 25rem;
+//   }
+//   ul {
+//     padding-inline-start: 2rem;
+//   }
+//   .wp-block-loginout {
+//     display: list-item;
+//     margin-left: 2rem;
+//     list-style-type: disc;
+//   }
+// }
+// .wp-block-tag-cloud {
+//   @extend .mb-0;
+// }
+
+/* search form */
 .search-form .form-control {
   color: $gray-100 !important;
   background-color: $gray-800 !important;
