@@ -7,11 +7,14 @@
  */
 
 namespace WP_RDNYC;
-
 use \Walker_Nav_Menu;
 
-add_filter( 'body_class', function( $classes ) {
 
+
+/**
+ * Filter to add special body class for front page & singular posts/pages
+ */
+add_filter( 'body_class', function( $classes ) {
   if ( is_singular( ['post', 'page'] ) ) {
     $classes[] = 'singular';
   }
@@ -21,8 +24,8 @@ add_filter( 'body_class', function( $classes ) {
   }
 
   return $classes;
-
 });
+
 
 /**
  * Filter to add CSS class to navbar menu <li> items
@@ -35,6 +38,7 @@ add_filter( 'nav_menu_css_class' , function( $classes, $item, $args, $depth ) {
   }      
   return $classes;
 }, 3, 4 );
+
 
 /**
  * Filter to add CSS class to navbar menu item <a> links
@@ -51,6 +55,17 @@ add_filter( 'nav_menu_link_attributes' , function( $atts, $item, $args ) {
   }
   return $atts;
 }, 2, 3 );
+
+
+/**
+ * filter to globally alter the '(more...)' text of the post excertp "read more" link
+ */
+add_filter( 'the_content_more_link', function () {
+  return '<div class="more-link-outer"><a class="btn btn-primary btn-sm more-link" href="' . get_permalink() . '">'
+    . '<span aria-label="Continue reading ' . get_the_title() . '">Read More&hellip;</span></a></div>';
+});
+
+
 
 
 /**

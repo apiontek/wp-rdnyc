@@ -6,11 +6,10 @@ $line-height-base:            1.35;
 $line-height-sm:              1.15;
 $line-height-lg:              1.75;
 
-
 // 'native font stack' for sans via https://getbootstrap.com/docs/5.0/content/reboot/#native-font-stack
 $font-family-sans-serif:
   // custom theme font
-  Overpass,
+  "Open Sans",
   // Cross-platform generic font family (default user interface font)
   system-ui,
   // Safari for macOS and iOS (San Francisco)
@@ -30,10 +29,11 @@ $font-family-sans-serif:
   // Emoji fonts
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
 
-$font-family-base: $font-family-sans-serif;
+// handbrush / handwriting / special / emphasis font stack
+$font-family-handbrush: "Permanent Marker", Caveat, Besom, Fjord, "Goudy Old Style", "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
 
-// handbrush / special / emphasis / impact font stack
-$font-family-handbrush: "Permanent Marker", Besom, Fjord, Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+// base bootstrap font
+$font-family-base: $font-family-sans-serif;
 
 // Features
 $enable-shadows: true;

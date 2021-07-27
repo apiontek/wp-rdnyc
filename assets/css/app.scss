@@ -8,10 +8,10 @@
 @import "svg-icons";
 
 /* Navbar toggler icon override */
-@import "nav-burger";
+@import "top-nav-burger";
 
-/* Navbar custom styling */
-@import "nav-bar-help";
+/* Top Navbar styling */
+@import "top-navbar";
 
 /* main */
 html,
@@ -20,6 +20,108 @@ body {
   background-color: $spaceblue-800;
   height: 100%;
 }
+a {
+  @extend .text-decoration-none;
+  &:hover {
+    @extend .text-decoration-underline;
+    color: $primary;
+  }
+}
+
+/* general additional text style */
+.font-family-handbrush {
+  font-family: $font-family-handbrush;
+}
+.text-gray-100 {
+  color: $gray-100;
+}
+.text-gray-200 {
+  color: $gray-200;
+}
+.text-gray-300 {
+  color: $gray-300;
+}
+.text-gray-400 {
+  color: $gray-400;
+}
+.text-gray-500 {
+  color: $gray-500;
+}
+.text-gray-600 {
+  color: $gray-600;
+}
+.text-gray-700 {
+  color: $gray-700;
+}
+.fs-larger {
+  font-size: larger;
+}
+.fs-smaller {
+  font-size: smaller;
+}
+
+/* general additional spacing style */
+.mb-two-rem {
+  margin-bottom: 2rem;
+}
+
+/* general additional border style */
+.border-bottom {
+  &.border-dashed {
+    border-bottom-style: dashed !important;
+  }
+  &.border-gray-300 {
+    border-bottom-color: $gray-300 !important;
+  }
+  &.border-gray-400 {
+    border-bottom-color: $gray-400 !important;
+  }
+  &.border-gray-500 {
+    border-bottom-color: $gray-500 !important;
+  }
+  &.border-gray-600 {
+    border-bottom-color: $gray-600 !important;
+  }
+  &.border-gray-700 {
+    border-bottom-color: $gray-700 !important;
+  }
+  &.border-gray-750 {
+    border-bottom-color: $gray-750 !important;
+  }
+  &.border-gray-800 {
+    border-bottom-color: $gray-800 !important;
+  }
+}
+
+/* post styling */
+article.post.sticky {
+  @extend .card;
+  background-color: shade-color($gray-800, 50%);
+  border-bottom: inherit !important;
+  margin-bottom: inherit !important;
+  padding-bottom: inherit !important;
+  header.post-header {
+    @extend .card-header;
+    @extend .pb-0;
+  }
+  div.post-body {
+    @extend .card-body;
+    @extend .pt-0;
+    &:last-child {
+      padding-bottom: 0 !important;
+      margin-bottom: .25rem !important;
+    }
+  }
+}
+.more-link-outer {
+  @extend .text-end;
+  @extend .mb-0;
+  .more-link {
+    @extend .text-decoration-none;
+    @extend .font-family-handbrush;
+  }
+}
+
 // a {
 //   color: rgba($white, 0.75);
 //   // border-bottom: $gray-600 2px solid;
@@ -54,18 +156,6 @@ body {
 // .border-gray-900 {
 //   border-color: $gray-900 !important;
 // }
-.text-gray-200 {
-  color: $gray-200;
-}
-.text-gray-300 {
-  color: $gray-300;
-}
-.text-gray-400 {
-  color: $gray-400;
-}
-.text-gray-500 {
-  color: $gray-500;
-}
 // .border-10 {
 //   border-width: 10px !important;
 // }
@@ -81,47 +171,93 @@ body {
 // .fw-600 {
 //   font-weight: 600;
 // }
-// .fs-larger {
-//   font-size: larger;
-// }
-// .fs-smaller {
-//   font-size: smaller;
-// }
 
 
 /* blockquote handling */
-blockquote {
-  &.wp-block-quote {
-    @extend .border-start;
-    @extend .border-gray;
-    @extend .border-5;
-    @extend .ms-0;
-    @extend .my-4;
-    @extend .ps-3;
-    @extend .py-2;
-    background-color: $gray-750;
-    p {
-      @extend .blockquote;
-      font-size: 1em;
-      &:last-of-type {
-        @extend .my-0;
-        @extend .py-0;
-      }
-    }
-    cite {
-      @extend .blockquote-footer;
-      @extend .text-gray-300;
+blockquote.wp-block-quote {
+  background-color: tint-color($spaceblue-800, 5%) !important;
+  @extend .border-start;
+  @extend .border-5;
+  border-left-color: tint-color($spaceblue-800, 15%) !important;
+  @extend .ms-0;
+  @extend .my-4;
+  @extend .px-3;
+  @extend .py-2;
+  quotes: "\201C" "\201D" "\201C" "\201D";
+  position: relative;
+  p {
+    @extend .blockquote;
+    &:last-of-type {
       @extend .my-0;
       @extend .py-0;
-      font-size: 0.85em;
-      font-style: normal;
     }
-    :last-child {
-      @extend .py-1;
+  }
+  &.is-style-large {
+    p {
+      font-size: 1.7em;
     }
+  }
+  cite {
+    @extend .blockquote-footer;
+    @extend .text-gray-300;
+    @extend .my-0;
+    @extend .py-0;
+    font-size: 0.85em;
+    font-style: normal;
+  }
+  &:last-child {
+    @extend .py-1;
+  }
+}
+figure.wp-block-pullquote {
+  &:not(.is-style-solid-color) {
+    background-color: tint-color($spaceblue-800, 5%) !important;
+    @extend .border-top;
+    @extend .border-bottom;
+    @extend .border-5;
+    border-top-color: tint-color($spaceblue-800, 15%) !important;
+    border-bottom-color: tint-color($spaceblue-800, 15%) !important;
   }
 }
 
+/* other wp styling */
+.btn-primary {
+  color: $spaceblue-800;
+}
+.has-drop-cap:not(:focus)::first-letter {
+  font-size: 5em;
+  margin: 0.05em 0.05em 0 0;
+}
+.wp-block-button {
+  .wp-block-button__link {
+    @extend .btn;
+    @extend .text-decoration-none;
+    @extend .mb-1;
+  }
+  &:not(.is-style-outline) .wp-block-button__link {
+    @extend .btn-primary;
+  }
+  &.is-style-outline .wp-block-button__link {
+    @extend .btn-outline-primary;
+  }
+  &.alignleft {
+    @extend .text-start;
+  }
+  &.aligncenter {
+    @extend .text-center;
+  }
+  &.alignright {
+    @extend .text-end;
+  }
+}
+
+
+// &:not(.is-style-outline) {
+    //   @extend .btn-primary;
+    // }
+    // &.is-style-outline {
+    //   @extend .btn-outline-primary;
+    // }
 
 // /* blog */
 // .post-title a {
@@ -177,8 +313,8 @@ blockquote {
 /* search form */
 .search-form .form-control {
   color: $gray-100 !important;
-  background-color: $gray-800 !important;
-  border-color: $gray-500;
+  background-color: $spaceblue-900 !important;
+  border-color: $spaceblue-600;
 }
 .search-form .form-control:focus {
   border-color: $input-focus-border-color;
@@ -188,40 +324,40 @@ input.form-control::-ms-clear,
 .form-control::-ms-reveal,
 input.form-control::-ms-reveal { display: none; }
 .form-control::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-  color:    $gray-500    !important;
+  color:    $spaceblue-700    !important;
 }
 .form-control:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-  color:    $gray-500    !important;
+  color:    $spaceblue-700    !important;
   opacity:  1;
 }
 .form-control::-moz-placeholder { /* Mozilla Firefox 19+ */
-  color:    $gray-500    !important;
+  color:    $spaceblue-700    !important;
   opacity:  1;
 }
 .form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color:    $gray-500    !important;
+  color:    $spaceblue-700    !important;
 }
 .form-control::-ms-input-placeholder { /* Microsoft Edge */
-  color:    $gray-500    !important;
+  color:    $spaceblue-700    !important;
 }
 .form-control::placeholder { /* Most modern browsers support this now. */
-  color:    $gray-500    !important;
+  color:    $spaceblue-700    !important;
 }
-.search-form {
-  .btn {
-    padding: .25rem .75rem;
-    &.btn-outline-light {
-      color: $gray-300;
-      border-color: $gray-500;
-      &:hover {
-        color: $primary;
-        background-color: inherit;
-        border-color: $secondary;
-      }
-    }
-    .icon {
-      font-size: 1.375rem;
-      margin-top: 1px;
-    }
-  }
-}
+// .search-form {
+//   .btn {
+//     padding: .25rem .75rem;
+//     &.btn-outline-light {
+//       color: $gray-300;
+//       border-color: $spaceblue-500;
+//       &:hover {
+//         color: $primary;
+//         background-color: inherit;
+//         border-color: $secondary;
+//       }
+//     }
+//     // .icon {
+//     //   font-size: 1.375rem;
+//     //   margin-top: 1px;
+//     // }
+//   }
+// }

@@ -29,11 +29,8 @@ function inline_svg( $svg_name, $atts = array() ) {
   // load initial svg content
   $svg_content = file_get_contents( get_template_directory_uri() . '/dist/images/' . $svg_name . '.svg' );
 
-  // set svg class
-  $class_target = $svg_class == '' ? 'class="{{class-placeholder}}"' : '{{class-placeholder}}';
-
   // replace svg class
-  $svg_content = str_replace($class_target, $svg_class, $svg_content);
+  $svg_content = str_replace('{{class-placeholder}}', $svg_class, $svg_content);
 
   // handle if role=img
   $svg_content = $svg_role_img ? str_replace('<svg ', '<svg role="img" ', $svg_content) : $svg_content;

@@ -9,14 +9,17 @@
 namespace WP_RDNYC;
 
 get_header(); ?>
-<main class="container-fluid">
+<main class="container d-flex justify-content-center mt-3">
   <div class="col-12 col-md-10 col-lg-9 col-xl-8 col-xxl-7 pb-2 mb-4 mt-3">
 
-    <?php if (is_archive()) : ?>
-    <h1 class="text-gray-300 fst-italic mb-4 tek-border-bottom-gray-dashed"><?= get_the_archive_title(); ?></h1>
+    <h1 class="fw-light text-gray-300 mb-4 border-bottom border-dashed border-gray-600">
+    <?php if (is_archive()) : get_the_archive_title();
+        else : single_post_title();
+        endif;
+      ?>
+    </h1>
 
     <?php
-      endif;
       if ( have_posts() ) :
         while ( have_posts() ) :
           the_post();

@@ -11,7 +11,7 @@
     "build": "concurrently \"npm run prod\" \"npm run dev\""
   },
   "dependencies": {
-    "@fontsource/overpass": "^4.x",
+    "@fontsource/open-sans": "^4.x",
     "@fontsource/permanent-marker": "^4.x",
     "@popperjs/core": "^2.x",
     "bootstrap": "^5.x",

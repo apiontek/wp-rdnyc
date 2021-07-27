@@ -6,13 +6,7 @@ import '../raw/rdnyc-logo.svg'; // rdnyc logo
 // other:
 import '../../node_modules/bootstrap-icons/icons/chevron-down.svg';
 import '../../node_modules/bootstrap-icons/icons/search.svg';
-// import "../../node_modules/@mdi/svg/svg/magnify.svg"; // search form button icon
-// import "../../node_modules/@mdi/svg/svg/home.svg";
-// import "../../node_modules/@mdi/svg/svg/information.svg";
-// import "../../node_modules/@mdi/svg/svg/account.svg";
-// import "../../node_modules/@mdi/svg/svg/calendar-clock.svg";
-// import "../../node_modules/@mdi/svg/svg/tag-multiple.svg";
-// import "../../node_modules/@mdi/svg/svg/rss.svg";
+// import '../../node_modules/bootstrap-icons/icons/person.svg';
 
 // Import Bootstrap JS
 import 'bootstrap/js/dist/collapse';
