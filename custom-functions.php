@@ -52,4 +52,5 @@ function inline_svg( $svg_name, $atts = array() ) {
   return $svg_content;
 };
 
+
 ?>

@@ -95,7 +95,8 @@ namespace WP_RDNYC;
             'container_id' => 'top-navbar-grid-main-menu-outer',
             'menu_class'      => 'top-navbar-grid-main-menu',
             'menu_item_class' => 'top-navbar-grid-main-menu-item',
-            'link_class'      => 'top-navbar-grid-main-menu-item-link'
+            'link_class'      => 'top-navbar-grid-main-menu-item-link',
+            'walker' => new RDNYC_Menu_Walker()
           ]);
           // echo '</section>';
         }

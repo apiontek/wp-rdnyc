@@ -4,8 +4,8 @@ import '../css/app.scss'
 // Import svg files for webpack handling
 import '../raw/rdnyc-logo.svg'; // rdnyc logo
 // other:
-// import '../../node_modules/bootstrap-icons/icons/chevron-down.svg';
-// import '../../node_modules/bootstrap-icons/icons/chevron-up.svg';
+import '../../node_modules/bootstrap-icons/icons/chevron-down.svg';
+import '../../node_modules/bootstrap-icons/icons/search.svg';
 // import "../../node_modules/@mdi/svg/svg/magnify.svg"; // search form button icon
 // import "../../node_modules/@mdi/svg/svg/home.svg";
 // import "../../node_modules/@mdi/svg/svg/information.svg";
@@ -22,8 +22,6 @@ import 'bootstrap/js/dist/dropdown';
 
 // import navbar burger code
 import "./_hamburger-helper";
-// import navbar dropdown menu helper code
-import "./_main-nav-menu-helper";
 
 // highlight any code blocks tagged with class 'to-highlight'
 document.addEventListener('DOMContentLoaded', (event) => {
