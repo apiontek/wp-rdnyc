@@ -94,6 +94,7 @@ nav#top-navbar-grid-outer {
   div#top-navbar-grid-main-menu-outer {
     @include media-breakpoint-down(lg) {
       display: none;
+      margin: 1em 0 0 0;
       &.show, &.collapsing {
         display: grid;
         grid-column-start: 1;
@@ -105,6 +106,7 @@ nav#top-navbar-grid-outer {
     }
     @include media-breakpoint-up(lg) {
       display: grid;
+      margin: 0 !important;
       grid-column-start: 2;
       grid-column-end: 3;
       grid-row-start: 2;
@@ -113,20 +115,19 @@ nav#top-navbar-grid-outer {
       align-items: end;
     }
     ul#menu-navbar-main-menu {
+      list-style: none;
       @extend .d-grid;
       grid-template-columns: 1fr;
-      list-style: none;
-      padding: 0;
-      margin: 1em 0 0 0;
-      @extend .d-lg-inline;
-      @include media-breakpoint-up(lg) {
-        margin: 0;
-      }
-      li.menu-item {
+      @extend .d-lg-flex;
+      @extend .flex-lg-row;
+      @extend .p-0;
+      @extend .m-0;
+      & > li.menu-item {
         @extend .text-center;
-        @extend .py-2;
-        @extend .d-lg-inline;
+        @extend .my-2;
+        @extend .my-lg-0;
         @include media-breakpoint-up(lg) {
+          display: list-item;
           padding: 0 0 0 1.5em !important;
         }
         .top-navbar-grid-main-menu-item-link {
@@ -157,7 +158,7 @@ nav#top-navbar-grid-outer {
           &.show {
             color: $primary;
             &:hover {
-              text-decoration: none !important;
+              @extend .text-decoration-none;
             }
             div.icon.baseline {
               transform: rotate(180deg);
@@ -165,27 +166,28 @@ nav#top-navbar-grid-outer {
             }
           }
           &::after {
-            display: none;
+            @extend .d-none;
           }
         }
         .dropdown-menu.dropdown-menu-dark {
           background-color: shade-color($gray-800, 50%);
           li.menu-item {
-            padding: 4px 0 !important;
-            .top-navbar-grid-main-menu-item-link {
-              display: block;
-              width: 100%;
-              padding: .25rem 1rem 0 1rem;
+            .dropdown-item.top-navbar-grid-main-menu-item-link {
+              @extend .fw-normal;
+              padding: 0.25rem 1rem 0 1rem !important;
+              text-transform: inherit !important;
               &:hover {
-                text-decoration: none !important;
+                @extend .text-decoration-none;
                 color: $gray-900;
                 background-color: $primary;
               }
-              &.active {
+            }
+            &.active {
+              .dropdown-item.top-navbar-grid-main-menu-item-link {
                 color: $gray-900;
                 background-color: shade-color($primary, 25%);
                 &:hover {
-                  text-decoration: none !important;
+                  @extend .text-decoration-none;
                   background-color: $primary;
                 }
               }

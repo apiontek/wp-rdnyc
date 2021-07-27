@@ -59,33 +59,36 @@ add_filter( 'nav_menu_link_attributes' , function( $atts, $item, $args ) {
 class RDNYC_Menu_Walker extends Walker_Nav_Menu {
 
   function start_lvl(&$output, $depth = 0, $args = array()) {
-    $output .= "\n<ul class=\"dropdown-menu dropdown-menu-dark dropdown-menu-end\">\n";
+    $output .= "\n<ul class=\"dropdown-menu dropdown-menu-dark dropdown-menu-lg-end\">\n";
   }
 
   function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
-      $item_html = '';
-      parent::start_el($item_html, $item, $depth, $args);
+    $item_html = '';
+    parent::start_el($item_html, $item, $depth, $args);
 
-      if ( $item->is_dropdown && $depth === 0 ) {
-          $item_html = str_replace( '<a', '<a class="dropdown-toggle top-navbar-grid-main-menu-item-link" data-bs-toggle="dropdown"', $item_html );
-          $item_html = str_replace( '</a>', inline_svg( 'bsi-chevron-down', array( 'div_class' => 'icon baseline ms-1' ) ) . '</a>', $item_html );
-      }
+    if ( $item->is_dropdown && $depth === 0 ) {
+      $item_html = str_replace( '<a', '<a class="dropdown-toggle top-navbar-grid-main-menu-item-link" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false"', $item_html );
+      $item_html = str_replace( '</a>', inline_svg( 'bsi-chevron-down', array( 'div_class' => 'icon baseline ms-1' ) ) . '</a>', $item_html );
+    }
 
-      $output .= $item_html;
-   }
+    if ( $item->menu_item_parent && $item->menu_item_parent > 0 && $depth > 0 ) {
+      $item_html = str_replace( '<a', '<a class="dropdown-item top-navbar-grid-main-menu-item-link"', $item_html );
+    }
 
-   function display_element($element, &$children_elements, $max_depth, $depth = 0, $args, &$output) {
-       if ( $element->current )
-       $element->classes[] = 'active';
+    $output .= $item_html;
+  }
 
-       $element->is_dropdown = !empty( $children_elements[$element->ID] );
+  function display_element($element, &$children_elements, $max_depth, $depth = 0, $args, &$output) {
+    if ( $element->current )
+      $element->classes[] = 'active';
 
-       if ( $element->is_dropdown ) {
-          if ( $depth === 0 ) {
-              $element->classes[] = 'dropdown';
-          }
-       }
+    $element->is_dropdown = !empty( $children_elements[$element->ID] );
 
-   parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
-   }
+    if ( $element->is_dropdown && $depth === 0 ) {
+      $element->classes[] = 'dropdown';
+    }
+
+    parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
+  }
+
 }
