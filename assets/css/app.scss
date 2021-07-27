@@ -311,12 +311,12 @@ figure.wp-block-pullquote {
 // }
 
 /* search form */
-.search-form .form-control {
+.form-control {
   color: $gray-100 !important;
   background-color: $spaceblue-900 !important;
   border-color: $spaceblue-600;
 }
-.search-form .form-control:focus {
+.form-control:focus {
   border-color: $input-focus-border-color;
 }
 .form-control::-ms-clear,
@@ -324,40 +324,66 @@ input.form-control::-ms-clear,
 .form-control::-ms-reveal,
 input.form-control::-ms-reveal { display: none; }
 .form-control::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-  color:    $spaceblue-700    !important;
+  color:    $gray-750    !important;
 }
 .form-control:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-  color:    $spaceblue-700    !important;
+  color:    $gray-750    !important;
   opacity:  1;
 }
 .form-control::-moz-placeholder { /* Mozilla Firefox 19+ */
-  color:    $spaceblue-700    !important;
+  color:    $gray-750    !important;
   opacity:  1;
 }
 .form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color:    $spaceblue-700    !important;
+  color:    $gray-750    !important;
 }
 .form-control::-ms-input-placeholder { /* Microsoft Edge */
-  color:    $spaceblue-700    !important;
+  color:    $gray-750    !important;
 }
 .form-control::placeholder { /* Most modern browsers support this now. */
-  color:    $spaceblue-700    !important;
+  color:    $gray-750    !important;
 }
-// .search-form {
-//   .btn {
-//     padding: .25rem .75rem;
-//     &.btn-outline-light {
-//       color: $gray-300;
-//       border-color: $spaceblue-500;
-//       &:hover {
-//         color: $primary;
-//         background-color: inherit;
-//         border-color: $secondary;
-//       }
-//     }
-//     // .icon {
-//     //   font-size: 1.375rem;
-//     //   margin-top: 1px;
-//     // }
-//   }
-// }
+
+
+label {
+  @extend .form-label;
+}
+input,
+.wp-block-search .wp-block-search__input,
+form input {
+  @extend .form-control;
+  &:focus {
+    border-color: $input-focus-border-color;
+  }
+  &::-ms-clear
+  &::-ms-reveal { display: none; }
+  &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    $gray-750    !important;
+  }
+  &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    $gray-750    !important;
+    opacity:  1;
+  }
+  &::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    $gray-750    !important;
+    opacity:  1;
+  }
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    $gray-750    !important;
+  }
+  &::-ms-input-placeholder { /* Microsoft Edge */
+    color:    $gray-750    !important;
+  }
+  &::placeholder { /* Most modern browsers support this now. */
+    color:    $gray-750    !important;
+  }
+}
+button,
+.wp-block-search .wp-block-search__button,
+form button {
+  @extend .btn;
+  @extend .btn-primary;
+}
+select {
+  @extend .form-select;
+}
