@@ -17,6 +17,17 @@ $hamburger-layer-color: $primary !default;
 /* import hamburgers sass */
 @import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
 
+/* fix button styling from bootstrap */
+button#top-navbar-grid-toggle-button {
+  -webkit-appearance: inherit;
+  &:hover, &:active, &:focus {
+    color: inherit;
+    background-color: inherit;
+    border-color: inherit;
+    box-shadow: inherit;
+  }
+}
+
 // /* correct colors to match bootstrap defaults */
 // .navbar-light {
 //   .hamburger {

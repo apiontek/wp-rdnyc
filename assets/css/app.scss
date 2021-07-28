@@ -8,10 +8,10 @@
 @import "svg-icons";
 
 /* Navbar toggler icon override */
-@import "top-nav-burger";
+@import "nav-burger";
 
-/* Top Navbar styling */
-@import "top-navbar";
+/* Navbar & Main layout styling */
+@import "layout-top-navbar-main";
 
 /* main */
 html,
@@ -20,6 +20,8 @@ body {
   background-color: $spaceblue-800;
   height: 100%;
 }
+
+/* links */
 a {
   @extend .text-decoration-none;
   &:hover {
@@ -27,6 +29,7 @@ a {
     color: $primary;
   }
 }
+
 
 /* general additional text style */
 .font-family-handbrush {
@@ -62,7 +65,7 @@ a {
 
 /* general additional spacing style */
 .mb-two-rem {
-  margin-bottom: 2rem;
+  margin-bottom: 2rem !important;
 }
 
 /* general additional border style */
@@ -100,6 +103,9 @@ article.post.sticky {
   border-bottom: inherit !important;
   margin-bottom: inherit !important;
   padding-bottom: inherit !important;
+  &.mb-two-rem {
+    margin-bottom: 2rem !important;
+  }
   header.post-header {
     @extend .card-header;
     @extend .pb-0;
@@ -174,6 +180,7 @@ article.post.sticky {
 
 
 /* blockquote handling */
+blockquote,
 blockquote.wp-block-quote {
   background-color: tint-color($spaceblue-800, 5%) !important;
   @extend .border-start;
@@ -210,6 +217,10 @@ blockquote.wp-block-quote {
   }
 }
 figure.wp-block-pullquote {
+  // @extend .my-3;
+  // @extend .py-3;
+  margin: 2em !important;
+  @extend .p-5;
   &:not(.is-style-solid-color) {
     background-color: tint-color($spaceblue-800, 5%) !important;
     @extend .border-top;
@@ -217,10 +228,23 @@ figure.wp-block-pullquote {
     @extend .border-5;
     border-top-color: tint-color($spaceblue-800, 15%) !important;
     border-bottom-color: tint-color($spaceblue-800, 15%) !important;
+    & blockquote {
+      background-color: none !important;
+      border: none !important;
+    }
+  }
+  & blockquote {
+    @extend .m-0;
+    @extend .p-0;
+    background-color: inherit !important;
+    border: inherit !important;
   }
 }
 
 /* other wp styling */
+.wp-block-image.alignfull img, .wp-block-image.alignwide img, .wp-block-image img {
+  height: auto;
+}
 .btn-primary {
   color: $spaceblue-800;
 }
@@ -250,7 +274,21 @@ figure.wp-block-pullquote {
     @extend .text-end;
   }
 }
-
+table {
+  @extend .table;
+  @extend .table-dark;
+}
+.wp-block-table {
+  table {
+    @extend .table;
+    @extend .table-dark;
+  }
+  &.is-style-stripes {
+    table {
+      @extend .table-striped;
+    }
+  }
+}
 
 // &:not(.is-style-outline) {
     //   @extend .btn-primary;
@@ -386,4 +424,7 @@ form button {
 }
 select {
   @extend .form-select;
+}
+.btn-primary, button, .wp-block-search .wp-block-search__button, form button, .wp-block-button:not(.is-style-outline) .wp-block-button__link {
+  box-shadow: inherit;
 }

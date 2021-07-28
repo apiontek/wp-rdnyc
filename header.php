@@ -39,7 +39,7 @@ namespace WP_RDNYC;
 
 <body <?php body_class(); ?> itemscope itemtype="https://schema.org/WebPage">
 
-  <nav id="top-navbar-grid-outer">
+  <nav id="top-navbar-grid-outer" class="container-fluid">
 
     <div id="top-navbar-grid-brand-outer">
       <h1>
