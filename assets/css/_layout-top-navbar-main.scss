@@ -12,11 +12,15 @@
       padding-left: var(--bs-gutter-x, 4rem);
     }
     @include media-breakpoint-up(xxl) {
+      // min-width: 1400px;
       max-width: 1400px;
     }
   }
 }
 .container-lg {
+  // @include media-breakpoint-up(lg) {
+  //   min-width: 960px;
+  // }
   @include media-breakpoint-up(xl) {
     max-width: 960px;
   }
@@ -32,6 +36,9 @@ main.rdnyc-single-outer {
   @extend .mt-md-4;
   @extend .d-flex;
   @extend .justify-content-center;
+  & > div.content {
+    @extend .w-100;
+  }
 }
 
 /*

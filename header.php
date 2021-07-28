@@ -21,6 +21,9 @@ namespace WP_RDNYC;
   <meta name="description" content="Recovery Dharma NYC: a peer-led movement using Buddhist practices and principles to overcome addiction through meditation, personal inquiry, and community">
 
   <link rel="preload" href="<?php echo get_stylesheet_directory_uri() . '/dist/fonts/open-sans-latin-400-normal.woff2'; ?>" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="<?php echo get_stylesheet_directory_uri() . '/dist/fonts/open-sans-latin-300-normal.woff2'; ?>" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="<?php echo get_stylesheet_directory_uri() . '/dist/fonts/open-sans-latin-700-normal.woff2'; ?>" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="<?php echo get_stylesheet_directory_uri() . '/dist/fonts/open-sans-latin-400-italic.woff2'; ?>" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="<?php echo get_stylesheet_directory_uri() . '/dist/fonts/permanent-marker-latin-400-normal.woff2'; ?>" as="font" type="font/woff2" crossorigin="anonymous">
 
   <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_stylesheet_directory_uri() . '/dist/images/apple-touch-icon.png'; ?>">

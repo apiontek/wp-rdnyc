@@ -107,7 +107,7 @@ article.post.sticky {
     margin-bottom: 2rem !important;
   }
   header.post-header {
-    @extend .card-header;
+    @extend .card-body;
     @extend .pb-0;
   }
   div.post-body {
@@ -119,6 +119,13 @@ article.post.sticky {
     }
   }
 }
+.post-header {
+  .post-title, .post-title a {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+  }
+}
+
 .more-link-outer {
   @extend .text-end;
   @extend .mb-0;
@@ -286,6 +293,34 @@ table {
   &.is-style-stripes {
     table {
       @extend .table-striped;
+    }
+  }
+}
+.post-page-numbers {
+  @extend .page-item;
+  &.current {
+    @extend .active;
+    & .page-link {
+      background-color: shade-color($primary, 25%) !important;
+      border-color: shade-color($primary, 25%) !important;
+      color: $gray-100;
+      &:hover {
+        background-color: shade-color($primary, 25%) !important;
+        border-color: shade-color($primary, 25%) !important;
+        color: $gray-100;
+      }
+    }
+  }
+  &:hover {
+    @extend .text-decoration-none;
+  }
+  & .page-link {
+    border: 1px solid shade-color($primary, 25%);
+    background-color: inherit !important;
+    &:hover {
+      border: 1px solid #51A39F;
+      background-color: #51A39F !important;
+      color: $spaceblue-800;
     }
   }
 }
