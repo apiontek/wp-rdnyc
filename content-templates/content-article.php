@@ -12,13 +12,13 @@ namespace WP_RDNYC;
 <article
   <?php
     $extra_post_class = is_singular() ? '' : ' mb-two-rem';
-    echo post_class( 'post border-bottom border-gray-750 pb-4' . $extra_post_class );
+    echo post_class( 'post border-bottom border-spaceblue-700 pb-4' . $extra_post_class );
   ?>
   itemscope itemtype="https://schema.org/CreativeWork">
 
   <header class="post-header">
     <?php
-      echo (is_page() ? '<h1 class="post-title fw-light text-gray-300 mb-4 border-bottom border-dashed border-gray-600">'
+      echo (is_page() ? '<h1 class="post-title fw-light text-gray-300 mb-4 border-bottom border-dashed border-spaceblue-600">'
         : '<h2 class="post-title fs-2 fw-600 mb-2">');
 
       if ( is_archive() || is_search() || is_home() ) :

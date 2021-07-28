@@ -1,4 +1,12 @@
 /* Bootstrap custom variable overrides */
+// Colors
+$primary: #51A39F;
+// $secondary: #9883E5;
+$secondary: #955E42;
+$success: #37B800;
+$info: #0075F2;
+$warning: #F9E900;
+$danger: #DD1C1A;
 
 // Typography
 $font-size-base: 1.125rem;
@@ -38,12 +46,3 @@ $font-family-base: $font-family-sans-serif;
 // Features
 $enable-shadows: true;
 $enable-negative-margins: true;
-
-// init colors for some vars
-$primary: #51A39F;
-// $secondary: #9883E5;
-$secondary: #955E42;
-$success: #37B800;
-$info: #0075F2;
-$warning: #F9E900;
-$danger: #DD1C1A

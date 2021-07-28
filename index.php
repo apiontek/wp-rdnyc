@@ -13,7 +13,7 @@ get_header(); ?>
 
   <div class="content">
     <?php if (!is_singular()) : ?>
-      <h1 class="fw-light text-gray-300 mb-4 border-bottom border-dashed border-gray-600">
+      <h1 class="fw-light text-gray-300 mb-4 border-bottom border-dashed border-spaceblue-600">
       <?php if (is_archive()) : get_the_archive_title();
           else : single_post_title();
           endif;
