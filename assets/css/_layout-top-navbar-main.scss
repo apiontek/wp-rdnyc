@@ -209,7 +209,6 @@ nav#top-navbar-grid-outer {
             }
           }
           &.show {
-            // color: $primary;
             opacity: 0.5;
             &:hover {
               @extend .text-decoration-none;
@@ -224,22 +223,20 @@ nav#top-navbar-grid-outer {
           }
         }
         .dropdown-menu.dropdown-menu-dark {
-          background-color: $spaceblue-900;
           li.menu-item {
             .dropdown-item.top-navbar-grid-main-menu-item-link {
               @extend .fw-normal;
-              // padding: 0.25rem 1rem 0 1rem !important;
               text-transform: inherit !important;
               &:hover {
                 @extend .text-decoration-none;
-                color: $spaceblue-800;
-                background-color: $primary;
+                color: $dropdown-link-hover-color;
+                background-color: $dropdown-link-hover-bg;
               }
             }
             &.active {
               .dropdown-item.top-navbar-grid-main-menu-item-link {
-                color: $spaceblue-100;
-                background-color: $spaceblue-600;
+                color: $dropdown-link-active-color;
+                background-color: $dropdown-link-active-bg;
               }
             }
           }

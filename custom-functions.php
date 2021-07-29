@@ -4,7 +4,7 @@
  * standard "page/multi-post index/listing" & "single-blog-post" header styles
  */
 function get_page_multi_heading( $content_str = '' ) {
-  $class = 'fw-light text-gray-400 mb-4 border-bottom border-dashed border-spaceblue-600';
+  $class = 'fw-light text-muted mb-4 border-bottom border-dashed border-spaceblue-600';
   return '<h1 class="' . $class . '">' . $content_str . '</h1>';
 }
 function get_post_single_heading( $content_str = '' ) {

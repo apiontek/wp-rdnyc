@@ -19,19 +19,13 @@
 /* main */
 html,
 body {
-  color: $gray-200;
-  background-color: $spaceblue-800;
   height: 100%;
 }
 
 /* links */
 a,
 #tsml a {
-  @extend .text-decoration-underline;
-  color: $gray-200;
   &:hover, &:focus {
-    // @extend .text-decoration-underline;
-    color: $primary;
     text-decoration-color: $gray-200 !important;
   }
 }
@@ -121,8 +115,6 @@ blockquote.wp-block-quote {
   }
 }
 figure.wp-block-pullquote {
-  // @extend .my-3;
-  // @extend .py-3;
   margin: 2em !important;
   @extend .p-5;
   &:not(.is-style-solid-color) {
@@ -153,7 +145,7 @@ figure.wp-block-pullquote {
   height: auto;
 }
 .btn-primary {
-  color: $spaceblue-800;
+  color: $dark;
 }
 .has-drop-cap:not(:focus)::first-letter {
   font-size: 5em;
@@ -181,123 +173,61 @@ figure.wp-block-pullquote {
     @extend .text-end;
   }
 }
+.wp-caption-text {
+  @extend .text-muted;
+}
 
+/* tables */
 table,
 .wp-block-table table,
 .wp-block-calendar table {
   @extend .table;
   @extend .table-dark;
   caption {
-    @extend .text-gray-400;
+    @extend .text-muted;
   }
   thead th,
   tbody td {
     border: none !important;
   }
   thead tr {
-    border-bottom: 1px solid $gray-600;
+    border-bottom: 1px solid $spaceblue-600;
   }
   tbody tr {
-    border-bottom: 1px solid $gray-800;
+    border-bottom: 1px solid $spaceblue-800;
     &:last-child {
       border-bottom: none !important;
     }
   }
 }
 .wp-block-calendar table,
-.wp-block-table.is-style-stripes table {
-  @extend .table-striped;
+.wp-block-table.is-style-stripes {
+  border-bottom: none;
+  table {
+    @extend .table-striped;
+    border-bottom: none;
+  }
 }
 
+
+/* post page pagination */
 .post-page-numbers {
   @extend .text-decoration-none;
   @extend .page-item;
   &.current {
-    @extend .active;
-    & .page-link {
-      @extend .text-decoration-none;
-      color: $spaceblue-100 !important;
-      background-color: $spaceblue-600 !important;
-      border-color: $spaceblue-600 !important;
-      &:hover {
-        @extend .text-decoration-none;
-        color: $spaceblue-100 !important;
-        background-color: $spaceblue-600 !important;
-        border-color: $spaceblue-600 !important;
-      }
-    }
-  }
-  &:hover {
-    @extend .text-decoration-none;
-  }
-  & .page-link {
-    @extend .text-decoration-none;
-    color: $gray-200;
-    background-color: inherit !important;
-    border: 1px solid $spaceblue-600;
-    &:hover {
-      color: $spaceblue-800;
-      background-color: $primary !important;
-      border: 1px solid $spaceblue-600;
-    }
+    @extend .page-item, .active;
   }
 }
-
 
 
 /* forms and search */
 label {
   @extend .form-label;
 }
-
-.form-control,
-input.form-control {
-  color: $gray-200;
-  background-color: $spaceblue-900 !important;
-  border-color: $spaceblue-600;
-  &:focus {
-    border-color: $input-focus-border-color;
-    color: $gray-200;
-  }
-  &::-ms-clear,
-  &::-ms-reveal { display: none; }
-  &::-webkit-input-placeholder, /* WebKit, Blink, Edge */
-  &:-ms-input-placeholder, /* Internet Explorer 10-11 */
-  &::-ms-input-placeholder, /* Microsoft Edge */
-  &::placeholder /* Most modern browsers support this now. */
-  { 
-    color:    $spaceblue-700    !important;
-  }
-  &:-moz-placeholder, /* Mozilla Firefox 4 to 18 */
-  &::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    $spaceblue-700    !important;
-    opacity:  1;
-  }
-}
-
 input,
 .wp-block-search .wp-block-search__input,
 form input {
   @extend .form-control;
-  color: $gray-200;
-  &:focus {
-    border-color: $input-focus-border-color;
-    color: $gray-200;
-  }
-  &::-ms-clear,
-  &::-ms-reveal { display: none; }
-  &::-webkit-input-placeholder, /* WebKit, Blink, Edge */
-  &:-ms-input-placeholder, /* Internet Explorer 10-11 */
-  &::-ms-input-placeholder, /* Microsoft Edge */
-  &::placeholder /* Most modern browsers support this now. */
-  { 
-    color:    $spaceblue-700    !important;
-  }
-  &:-moz-placeholder, /* Mozilla Firefox 4 to 18 */
-  &::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    $spaceblue-700    !important;
-    opacity:  1;
-  }
 }
 
 button,
@@ -306,10 +236,10 @@ form button {
   @extend .btn;
   @extend .btn-primary;
 }
-.btn-primary, button, .wp-block-search .wp-block-search__button, form button, .wp-block-button:not(.is-style-outline) .wp-block-button__link {
-  box-shadow: inherit;
-}
 
 select {
   @extend .form-select;
 }
+
+/* Meetings plugin styling changes */
+@import "meetings-plugin";

@@ -1,0 +1,54 @@
+#tsml {
+  .form-control {
+    border: 1px solid $primary;
+  }
+  & .btn, & .btn a {
+    text-decoration: none !important;
+  }
+  .btn-default {
+    color: $spaceblue-800;
+    background-color: $primary;
+    border: 1px solid $primary;
+    &:hover {
+      @extend .btn-primary, :hover;
+    }
+    &.toggle-view {
+      color: $primary;
+      background-color: inherit;
+      border: 1px solid $primary;
+      &:hover {
+        color: $spaceblue-900;
+        background-color: tint-color($primary, 30%);
+        border: 1px solid $primary;
+      }
+      &.active {
+        color: $spaceblue-900;
+        background-color: $primary;
+        border: 1px solid $primary;
+        &:hover {
+          color: $spaceblue-900;
+          background-color: $primary;
+          border: 1px solid $primary;
+        }
+      }
+    }
+  }
+  .table-wrapper {
+    color: #fff;
+  }
+  .dropdown-menu {
+    color: $gray-200;
+    // background-color: $spaceblue-900;
+  }
+  .dropdown-menu > li > a {
+    color: $gray-200 !important;
+    text-decoration: none !important;
+  }
+  .dropdown-menu > li > a:hover,
+  .dropdown-menu > li.active > a,
+  .dropdown-menu > li.active > a:hover {
+    color: $spaceblue-900 !important;
+    text-decoration: none !important;
+    background-color: $primary !important;
+  }
+}

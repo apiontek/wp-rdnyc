@@ -1,12 +1,17 @@
 /* Bootstrap custom variable overrides */
-@import "bs-custom";
+@import "bs-custom-pre";
 
-// Required || Configuration
+// Required || Configuration :: bootstrap functions
 @import "../../node_modules/bootstrap/scss/functions";
+
+/* Bootstrap custom variable overrides */
+@import "bs-vars-pre";
+
+// Required || Configuration :: bootstrap variables
 @import "../../node_modules/bootstrap/scss/variables";
 
 /* Bootstrap custom variable overrides */
-@import "bs-colors";
+@import "bs-custom-post";
 
 // Required || Configuration -- CONTINUED
 @import "../../node_modules/bootstrap/scss/mixins";

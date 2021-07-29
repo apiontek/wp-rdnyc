@@ -1,12 +1,16 @@
 // Colors
-// now defined in bs-custom
-// $primary: #51A39F;
-// // $secondary: #9883E5;
-// $secondary: #955E42;
-// $success: #37B800;
-// $info: #0075F2;
-// $warning: #F9E900;
-// $danger: #DD1C1A;
+// scss-docs-start color-variables
+$blue:    #0d6efd;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #d63384;
+$red:     #dc3545;
+$orange:  #fd7e14;
+$yellow:  #ffc107;
+$green:   #198754;
+$teal:    #20c997;
+$cyan:    #0dcaf0;
+// scss-docs-end color-variables
 
 // define black, white, gray
 $white: #fff;
@@ -25,6 +29,7 @@ $gray-750: shade-color($gray, 50%);
 $gray-800: shade-color($gray, 60%);
 $gray-900: shade-color($gray, 80%);
 
+
 // spaceblue is based on coolors.co 'space cadet' #212c40 which was bg color in Lester's original design
 // background will be spaceblue-800
 $spaceblue-100: #aebcd5;
@@ -38,6 +43,18 @@ $spaceblue-750: #2a3751;
 $spaceblue-800: #212c40;
 $spaceblue-850: #1c2536;
 $spaceblue-900: #151c28;
+
+
+// scss-docs-start theme-color-variables
+$primary:       #51A39F;
+$secondary:     $gray;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $spaceblue-100;
+$dark:          $spaceblue-900;
+// scss-docs-end theme-color-variables
 
 
 // Create your own map
@@ -54,14 +71,9 @@ $custom-colors: (
   "gray-dark":  $gray-800
 );
 
-// Merge the maps
-$theme-colors: map-merge($theme-colors, $custom-colors);
 
-// misc
-$navbar-dark-color: rgba($white, 0.75);
-$navbar-dark-hover-color: rgba($white, 0.9);
-$navbar-dark-active-color: $white;
-$navbar-dark-disabled-color: rgba($white, 0.45);
-$navbar-dark-toggler-border-color: rgba($white, 0.3);
+$body-bg: $spaceblue-800;
+$body-color: $gray-200;
+$text-muted: $gray-400;
+$component-active-color: $dark;
 $component-active-bg: $primary;
-// $custom-dropdown-menu-background:
