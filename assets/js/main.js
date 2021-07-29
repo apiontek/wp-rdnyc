@@ -5,8 +5,9 @@ import '../css/app.scss'
 import '../raw/rdnyc-logo.svg'; // rdnyc logo
 // other:
 import '../../node_modules/bootstrap-icons/icons/chevron-down.svg';
+import '../../node_modules/bootstrap-icons/icons/chevron-left.svg';
+import '../../node_modules/bootstrap-icons/icons/chevron-right.svg';
 import '../../node_modules/bootstrap-icons/icons/search.svg';
-// import '../../node_modules/bootstrap-icons/icons/person.svg';
 
 // Import Bootstrap JS
 import 'bootstrap/js/dist/collapse';

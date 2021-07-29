@@ -7,6 +7,9 @@
 /*SVG ICON SYSTEM*/
 @import "svg-icons";
 
+/* Basic style additions */
+@import "basic-additions";
+
 /* Navbar toggler icon override */
 @import "nav-burger";
 
@@ -22,10 +25,11 @@ body {
 }
 
 /* links */
-a {
-  // @extend .text-decoration-none;
+a,
+#tsml a {
+  @extend .text-decoration-underline;
   color: $gray-200;
-  &:hover {
+  &:hover, &:focus {
     // @extend .text-decoration-underline;
     color: $primary;
     text-decoration-color: $gray-200 !important;
@@ -33,85 +37,6 @@ a {
 }
 
 
-/* general additional text style */
-.font-family-handbrush {
-  font-family: $font-family-handbrush;
-}
-.text-gray-100 {
-  color: $gray-100 !important;
-}
-.text-gray-200 {
-  color: $gray-200 !important;
-}
-.text-gray-300 {
-  color: $gray-300 !important;
-}
-.text-gray-400 {
-  color: $gray-400 !important;
-}
-.text-gray-500 {
-  color: $gray-500 !important;
-}
-.text-gray-600 {
-  color: $gray-600 !important;
-}
-.text-gray-700 {
-  color: $gray-700 !important;
-}
-.fs-larger {
-  font-size: larger;
-}
-.fs-smaller {
-  font-size: smaller;
-}
-
-/* general additional spacing style */
-.mb-two-rem {
-  margin-bottom: 2rem !important;
-}
-
-/* general additional border style */
-.border-bottom {
-  &.border-dashed {
-    border-bottom-style: dashed !important;
-  }
-  &.border-gray-300 {
-    border-bottom-color: $gray-300 !important;
-  }
-  &.border-gray-400 {
-    border-bottom-color: $gray-400 !important;
-  }
-  &.border-gray-500 {
-    border-bottom-color: $gray-500 !important;
-  }
-  &.border-gray-600 {
-    border-bottom-color: $gray-600 !important;
-  }
-  &.border-gray-700 {
-    border-bottom-color: $gray-700 !important;
-  }
-  &.border-gray-800 {
-    border-bottom-color: $gray-800 !important;
-  }
-  &.border-spaceblue-300 {
-    border-bottom-color: $spaceblue-300 !important;
-  }
-  &.border-spaceblue-400 {
-    border-bottom-color: $spaceblue-400 !important;
-  }
-  &.border-spaceblue-500 {
-    border-bottom-color: $spaceblue-500 !important;
-  }
-  &.border-spaceblue-600 {
-    border-bottom-color: $spaceblue-600 !important;
-  }
-  &.border-spaceblue-700 {
-    border-bottom-color: $spaceblue-700 !important;
-  }
-  &.border-spaceblue-800 {
-    border-bottom-color: $spaceblue-800 !important;
-  }
-}
 
 /* post styling */
 article.post.sticky {
@@ -136,10 +61,15 @@ article.post.sticky {
     }
   }
 }
-.post-header {
-  .post-title, .post-title a {
+header.post-header {
+  h1, h2, h1 a, h2 a {
     -ms-word-wrap: break-word;
     word-wrap: break-word;
+  }
+}
+.article.post-body {
+  h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+    padding-top: 0.5rem;
   }
 }
 
@@ -315,83 +245,71 @@ table,
 
 
 
-/* search form */
-.form-control {
-  color: $gray-200;
-  background-color: $spaceblue-900 !important;
-  border-color: $spaceblue-600;
-}
-.form-control:focus {
-  border-color: $input-focus-border-color;
-}
-.form-control::-ms-clear,
-input.form-control::-ms-clear,
-.form-control::-ms-reveal,
-input.form-control::-ms-reveal { display: none; }
-.form-control::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-  color:    $spaceblue-700    !important;
-}
-.form-control:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-  color:    $spaceblue-700    !important;
-  opacity:  1;
-}
-.form-control::-moz-placeholder { /* Mozilla Firefox 19+ */
-  color:    $spaceblue-700    !important;
-  opacity:  1;
-}
-.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color:    $spaceblue-700    !important;
-}
-.form-control::-ms-input-placeholder { /* Microsoft Edge */
-  color:    $spaceblue-700    !important;
-}
-.form-control::placeholder { /* Most modern browsers support this now. */
-  color:    $spaceblue-700    !important;
-}
-
-
+/* forms and search */
 label {
   @extend .form-label;
 }
-input,
-.wp-block-search .wp-block-search__input,
-form input {
-  @extend .form-control;
+
+.form-control,
+input.form-control {
+  color: $gray-200;
+  background-color: $spaceblue-900 !important;
+  border-color: $spaceblue-600;
   &:focus {
     border-color: $input-focus-border-color;
+    color: $gray-200;
   }
-  &::-ms-clear
+  &::-ms-clear,
   &::-ms-reveal { display: none; }
-  &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  &::-webkit-input-placeholder, /* WebKit, Blink, Edge */
+  &:-ms-input-placeholder, /* Internet Explorer 10-11 */
+  &::-ms-input-placeholder, /* Microsoft Edge */
+  &::placeholder /* Most modern browsers support this now. */
+  { 
     color:    $spaceblue-700    !important;
   }
-  &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:    $spaceblue-700    !important;
-    opacity:  1;
-  }
+  &:-moz-placeholder, /* Mozilla Firefox 4 to 18 */
   &::-moz-placeholder { /* Mozilla Firefox 19+ */
     color:    $spaceblue-700    !important;
     opacity:  1;
   }
-  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+}
+
+input,
+.wp-block-search .wp-block-search__input,
+form input {
+  @extend .form-control;
+  color: $gray-200;
+  &:focus {
+    border-color: $input-focus-border-color;
+    color: $gray-200;
+  }
+  &::-ms-clear,
+  &::-ms-reveal { display: none; }
+  &::-webkit-input-placeholder, /* WebKit, Blink, Edge */
+  &:-ms-input-placeholder, /* Internet Explorer 10-11 */
+  &::-ms-input-placeholder, /* Microsoft Edge */
+  &::placeholder /* Most modern browsers support this now. */
+  { 
     color:    $spaceblue-700    !important;
   }
-  &::-ms-input-placeholder { /* Microsoft Edge */
+  &:-moz-placeholder, /* Mozilla Firefox 4 to 18 */
+  &::-moz-placeholder { /* Mozilla Firefox 19+ */
     color:    $spaceblue-700    !important;
-  }
-  &::placeholder { /* Most modern browsers support this now. */
-    color:    $spaceblue-700    !important;
+    opacity:  1;
   }
 }
+
 button,
 .wp-block-search .wp-block-search__button,
 form button {
   @extend .btn;
   @extend .btn-primary;
 }
-select {
-  @extend .form-select;
-}
 .btn-primary, button, .wp-block-search .wp-block-search__button, form button, .wp-block-button:not(.is-style-outline) .wp-block-button__link {
   box-shadow: inherit;
+}
+
+select {
+  @extend .form-select;
 }

@@ -1,6 +1,20 @@
 <?php
 
 /**
+ * standard "page/multi-post index/listing" & "single-blog-post" header styles
+ */
+function get_page_multi_heading( $content_str = '' ) {
+  $class = 'fw-light text-gray-400 mb-4 border-bottom border-dashed border-spaceblue-600';
+  return '<h1 class="' . $class . '">' . $content_str . '</h1>';
+}
+function get_post_single_heading( $content_str = '' ) {
+  $class = 'fs-2 fw-600 mb-2';
+  return '<h2 class="' . $class . '">' . $content_str . '</h2>';
+}
+
+
+
+/**
  * example inline SVG function atts array supported keys
  */
 // array(

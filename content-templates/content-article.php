@@ -8,43 +8,44 @@
 
 namespace WP_RDNYC;
 
+// for singular page, no extra bottom margin...
+$post_class = is_singular() ? '' : ' mb-two-rem ';
+$post_class .= 'post border-bottom border-spaceblue-700 pb-4';
+$post_class = esc_attr( implode( ' ', get_post_class( $post_class ) ) );
+
 ?>
-<article
-  <?php
-    $extra_post_class = is_singular() ? '' : ' mb-two-rem';
-    echo post_class( 'post border-bottom border-spaceblue-700 pb-4' . $extra_post_class );
-  ?>
-  itemscope itemtype="https://schema.org/CreativeWork">
+
+<article id="post-<?php the_ID(); ?>" class="<?php echo $post_class; ?>" itemscope itemtype="https://schema.org/CreativeWork">
 
   <header class="post-header">
     <?php
-      echo (is_page() ? '<h1 class="post-title fw-light text-gray-300 mb-4 border-bottom border-dashed border-spaceblue-600">'
-        : '<h2 class="post-title fs-2 fw-600 mb-2">');
+      // post/page header inner content (title, with link for query/index listings)
+      $h_inner = ( is_archive() || is_search() || is_home() ) ?
+        '<a href="' . esc_url( get_the_permalink() ) . '" rel="bookmark">'
+        . esc_html( get_the_title() ) . '</a>' :
+          esc_html( get_the_title() );
 
-      if ( is_archive() || is_search() || is_home() ) :
-        printf( '<a href="%s" rel="bookmark">%s</a>',
-          esc_url( get_the_permalink() ),
-          esc_html( get_the_title() )
-        );
-      else : echo esc_html( get_the_title() );
-      endif;
-
-      echo (is_page() ? '</h1>' : '</h2>');
+      // For pages we want a larger heading like an index/query listing
+      // otherwise, a regular article/post header
+      echo (is_page() ? get_page_multi_heading( $h_inner ) : get_post_single_heading( $h_inner ));
     ?>
 
-    <?php if (!is_page()) : ?>
-    <div class="post-date text-gray-400 mb-3" style="margin-top: -.33rem;">
-      <!-- inline_svg( 'bsi-clock', array( 'div_class' => 'icon baseline me-2' ) ) .  -->
-      <?php
-        if (get_the_title() === '') {
-          echo '<a href="' . esc_url( get_the_permalink() ) . '" rel="bookmark">';
-        }
-        echo get_the_date('F j, Y');
-        if (get_the_title() === '') {
-          echo '</a>';
-        }
-      ?>
-    </div>
+    <?php // when not a page, we also output the published date
+      if (!is_page()) : ?>
+      <div class="post-date text-gray-400 mb-3" style="margin-top: -.33rem;">
+        <?php
+          if (get_the_title() === '') :
+            printf( '<a href="%s" rel="bookmark">%s</a>',
+              esc_url( get_the_permalink() ),
+              get_the_date('F j, Y')
+            );
+
+          else :
+            echo get_the_date('F j, Y');
+          
+          endif;
+        ?>
+      </div>
     <?php endif; ?>
 
   </header>
