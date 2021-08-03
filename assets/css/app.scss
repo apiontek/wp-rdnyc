@@ -219,11 +219,30 @@ figure.wp-caption {
 
 
 /* forms and search */
-label {
+label,
+div.wpforms-container-full .wpforms-form .wpforms-field-label {
   @extend .form-label;
 }
-input {
+div.wpforms-container-full .wpforms-form .wpforms-required-label {
+  color: $red !important;
+}
+input, textarea,
+div.wpforms-container-full .wpforms-form input[type="text"],
+div.wpforms-container-full .wpforms-form input[type="email"],
+div.wpforms-container-full .wpforms-form textarea {
   @extend .form-control;
+}
+.wpforms-submit-container {
+  text-align: right;
+}
+div.wpforms-container-full .wpforms-form button[type="submit"] {
+  @extend .btn;
+  @extend .btn-primary;
+  font-family: $font-family-handbrush;
+}
+div.wpforms-container-full div.wpforms-confirmation-container-full {
+  @extend .alert;
+  @extend .alert-success;
 }
 select {
   @extend .form-select;
