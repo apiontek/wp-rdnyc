@@ -10,19 +10,9 @@ define( 'WP_RDNYC_DIR', __DIR__ );
 define( 'WP_RDNYC_URL', get_template_directory_uri() );
 
 /**
- * Social icons definition & functions
- */
-require_once( WP_RDNYC_DIR . '/socials.php' );
-
-/**
  * Custom functions
  */
 require_once( WP_RDNYC_DIR . '/custom-functions.php' );
-
-/**
- * Custom shortcodes for use in content
- */
-require_once( WP_RDNYC_DIR . '/custom-shortcodes.php');
 
 /**
  * Autoloader for browersync
