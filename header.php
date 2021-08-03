@@ -42,19 +42,19 @@ namespace WP_RDNYC;
 
 <body <?php body_class(); ?> itemscope itemtype="https://schema.org/WebPage">
 
-  <nav id="top-navbar-grid-outer" class="container-fluid">
+  <nav id="nt-out" class="container-fluid  mt-ltmd-125 mt-md-5  mb-4 mb-sm-4-2 mb-lg-4-25 mb-xl-5 mb-xxl-7">
 
-    <div id="top-navbar-grid-brand-outer">
+    <div class="nt-brand">
       <h1>
         <!-- my-0 py-0 -->
         <?php
-          printf( '<a id="top-navbar-grid-brand-link" href="%1$s" rel="home">',
+          printf( '<a href="%1$s" rel="home">',
             esc_url( home_url( '/' ) )
           );
 
           echo inline_svg( 'svg-rdnyc-logo',
               array(
-                'svg_class' => 'img header-logo',
+                'svg_class' => 'img',
                 'svg_title' => 'Recovery Dharma New York City',
                 'svg_role_img' => true,
                 'svg_aria_hidden' => false
@@ -66,10 +66,10 @@ namespace WP_RDNYC;
       </h1>
     </div>
 
-    <div id="top-navbar-grid-toggle-button-outer">
-      <button class="hamburger hamburger--squeeze" id="top-navbar-grid-toggle-button"
-        type="button" data-bs-toggle="collapse" data-bs-target="#top-navbar-grid-main-menu-outer"
-        aria-controls="top-navbar-grid-main-menu-outer" aria-expanded="false" aria-label="Toggle navigation"
+    <div id="nt-burger">
+      <button class="hamburger hamburger--squeeze" id="btn-burger"
+        type="button" data-bs-toggle="collapse" data-bs-target="#nt-mainmenu"
+        aria-controls="nt-mainmenu" aria-expanded="false" aria-label="Toggle navigation"
       >
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>
@@ -77,7 +77,7 @@ namespace WP_RDNYC;
       </button>
     </div>
 
-    <div id="top-navbar-grid-socialicon-widget-outer">
+    <div id="nt-socials">
       <?php
           // using widget to include social icons, so they can be edited by wordpress users
           if ( is_active_sidebar( 'navbar-socialicon-widget' ) ) :
@@ -95,10 +95,7 @@ namespace WP_RDNYC;
             'depth' => 2,
             'menu'  => 'navbar-main-menu',
             'container'       => 'div',
-            'container_id' => 'top-navbar-grid-main-menu-outer',
-            'menu_class'      => 'top-navbar-grid-main-menu',
-            'menu_item_class' => 'top-navbar-grid-main-menu-item',
-            'link_class'      => 'top-navbar-grid-main-menu-item-link',
+            'container_id' => 'nt-mainmenu',
             'walker' => new RDNYC_Menu_Walker()
           ]);
           // echo '</section>';

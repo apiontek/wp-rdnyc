@@ -9,7 +9,7 @@
 namespace WP_RDNYC;
 
 // for singular page, no extra bottom margin...
-$post_class = is_singular() ? '' : ' mb-two-rem ';
+$post_class = is_singular() ? '' : ' mb-4-2 ';
 $post_class .= 'post border-bottom border-spaceblue-700 pb-4';
 $post_class = esc_attr( implode( ' ', get_post_class( $post_class ) ) );
 
@@ -21,9 +21,7 @@ $post_class = esc_attr( implode( ' ', get_post_class( $post_class ) ) );
     <?php
       // post/page header inner content (title, with link for query/index listings)
       $h_inner = ( is_archive() || is_search() || is_home() ) ?
-        '<a href="' . esc_url( get_the_permalink() ) . '" rel="bookmark">'
-        . esc_html( get_the_title() ) . '</a>' :
-          esc_html( get_the_title() );
+        '<a href="' . esc_url( get_the_permalink() ) . '" rel="bookmark">' . get_the_title() . '</a>' : get_the_title();
 
       // For pages we want a larger heading like an index/query listing
       // otherwise, a regular article/post header

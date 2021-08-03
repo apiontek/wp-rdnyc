@@ -1,7 +1,4 @@
 /* general additional text style */
-.font-family-handbrush {
-  font-family: $font-family-handbrush;
-}
 .text-gray-100 {
   color: $gray-100 !important;
 }
@@ -24,15 +21,17 @@
   color: $gray-700 !important;
 }
 .fs-larger {
-  font-size: larger;
+  font-size: larger !important;
 }
 .fs-smaller {
-  font-size: smaller;
+  font-size: smaller !important;
 }
 
 /* general additional spacing style */
-.mb-two-rem {
-  margin-bottom: 2rem !important;
+.mt-ltmd-125 {
+  @include media-breakpoint-down(md) {
+    margin-top: 1.25rem !important;
+  }
 }
 
 /* general additional border style */

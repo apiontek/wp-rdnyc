@@ -1,5 +1,5 @@
-const togglerBtn = document.getElementById("top-navbar-grid-toggle-button");
-const navbarContent = document.getElementById("top-navbar-grid-main-menu-outer");
+const togglerBtn = document.getElementById("btn-burger");
+const navbarContent = document.getElementById("nt-mainmenu");
 
 navbarContent.addEventListener("show.bs.collapse", () => {
   console.log("opening navbar content");

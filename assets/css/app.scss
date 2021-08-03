@@ -28,28 +28,27 @@ a {
     text-decoration-color: $gray-200 !important;
   }
 }
-#tsml a {
-  @extend a;
-}
 
 
 /* post styling */
 article.post.sticky {
-  @extend .card;
+  border-radius: .25rem !important;
   background-color: shade-color($gray-800, 50%);
   border-bottom: inherit !important;
   margin-bottom: inherit !important;
-  padding-bottom: inherit !important;
-  &.mb-two-rem {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-bottom: 0.5rem !important;
+  &.mb-4-2 {
     margin-bottom: 2rem !important;
   }
   header.post-header {
-    @extend .card-body;
-    @extend .pb-0;
+    flex: 1 1 auto !important;
+    padding: 1rem 1rem 0 1rem !important;
   }
   div.post-body {
-    @extend .card-body;
-    @extend .pt-0;
+    flex: 1 1 auto !important;
+    padding: 0 1rem 1rem 1rem !important;
     &:last-child {
       padding-bottom: 0 !important;
       margin-bottom: .25rem !important;
@@ -69,11 +68,11 @@ header.post-header {
 }
 
 .more-link-outer {
-  @extend .text-end;
-  @extend .mb-0;
+  text-align: right !important;
+  margin-bottom: 0 !important;
   .more-link {
-    @extend .text-decoration-none;
-    @extend .font-family-handbrush;
+    text-decoration: none !important;
+    font-family: $font-family-handbrush;
   }
 }
 
@@ -82,47 +81,56 @@ header.post-header {
 blockquote,
 blockquote.wp-block-quote {
   background-color: tint-color($spaceblue-800, 5%) !important;
-  @extend .border-start;
-  @extend .border-5;
+  border-left-width: 5px !important;
+  border-left-style: solid !important;
   border-left-color: tint-color($spaceblue-800, 15%) !important;
-  @extend .ms-0;
-  @extend .my-4;
-  @extend .px-3;
-  @extend .py-2;
-  quotes: "\201C" "\201D" "\201C" "\201D";
-  position: relative;
+  margin-right: 0 !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+  padding: .5rem 1rem !important;
+  font-size: 1.4rem;
   p {
-    @extend .blockquote;
+    margin-top: 0;
     &:last-of-type {
-      @extend .my-0;
-      @extend .py-0;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
     }
   }
   &.is-style-large {
     p {
-      font-size: 1.7em;
+      font-size: 1.7rem;
+    }
+    cite {
+      font-size: 1.125rem;
     }
   }
   cite {
-    @extend .blockquote-footer;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
     color: $gray-300;
-    @extend .my-0;
-    @extend .py-0;
-    font-size: 0.85em;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    font-size: 0.875rem;
     font-style: normal;
+    &::before {
+      content: "— ";
+    }
   }
   &:last-child {
-    @extend .py-1;
+    padding-bottom: .25rem !important;
   }
 }
 figure.wp-block-pullquote {
   margin: 2em !important;
-  @extend .p-5;
+  padding: 3rem !important;
   &:not(.is-style-solid-color) {
     background-color: tint-color($spaceblue-800, 5%) !important;
-    @extend .border-top;
-    @extend .border-bottom;
-    @extend .border-5;
+    border-top-width: 5px !important;
+    border-top-style: solid !important;
+    border-bottom-width: 5px !important;
+    border-bottom-style: solid !important;
     border-top-color: tint-color($spaceblue-800, 15%) !important;
     border-bottom-color: tint-color($spaceblue-800, 15%) !important;
     & blockquote {
@@ -131,18 +139,17 @@ figure.wp-block-pullquote {
     }
   }
   & blockquote {
-    @extend .m-0;
-    @extend .p-0;
+    margin: 0 !important;
+    padding: 0 !important;
     background-color: inherit !important;
     border: inherit !important;
   }
 }
 
 /* other wp styling */
-.wp-block-image.alignfull img,
-.wp-block-image.alignwide img,
-.wp-block-image img,
-.wp-block-media-text__media img {
+img,
+figure.wp-caption {
+  max-width: 100%;
   height: auto;
 }
 .btn-primary {
@@ -153,67 +160,57 @@ figure.wp-block-pullquote {
   margin: 0.05em 0.05em 0 0;
 }
 .wp-block-button {
-  .wp-block-button__link {
-    @extend .btn;
-    @extend .text-decoration-none;
-    @extend .mb-1;
-  }
-  &:not(.is-style-outline) .wp-block-button__link {
-    @extend .btn-primary;
-  }
-  &.is-style-outline .wp-block-button__link {
-    @extend .btn-outline-primary;
-  }
-  &.alignleft {
-    @extend .text-start;
-  }
-  &.aligncenter {
-    @extend .text-center;
-  }
-  &.alignright {
-    @extend .text-end;
-  }
+  margin-bottom: .5rem !important;
+}
+.wp-block-button__link,
+.wp-block-search .wp-block-search__button {
+  @extend .btn;
+  @extend .btn-primary;
+}
+.is-style-outline > .wp-block-button__link {
+  @extend .btn;
+  @extend .btn-outline-primary;
 }
 .wp-caption-text {
-  @extend .text-muted;
+  color: $text-muted !important;
+}
+.alignleft {
+  text-align: left !important;
+}
+.aligncenter {
+  text-align: center !important;
+}
+.alignright {
+  text-align: right !important;
 }
 
 /* tables */
-table,
 .wp-block-table table,
-.wp-block-calendar table {
+.wp-block-calendar {
   @extend .table;
   @extend .table-dark;
   caption {
-    @extend .text-muted;
-  }
-  thead th,
-  tbody td {
-    border: none !important;
-  }
-  thead tr {
-    border-bottom: 1px solid $spaceblue-600;
-  }
-  tbody tr {
-    border-bottom: 1px solid $spaceblue-800;
-    &:last-child {
-      border-bottom: none !important;
-    }
+    color: $text-muted !important;
   }
 }
-.wp-block-calendar table,
 .wp-block-table.is-style-stripes {
   border-bottom: none;
   table {
     @extend .table-striped;
-    border-bottom: none;
   }
 }
-
+.wp-block-calendar table tbody { color: $text-muted !important; }
+.wp-block-calendar table th { background-color: tint-color($dark, 5%) !important; }
+.wp-block-calendar th, .wp-block-calendar tbody td {
+  border: 1px solid $spaceblue-600 !important;
+}
+.wp-block-calendar > .wp-calendar-nav > span > a {
+  background-color: inherit !important;
+}
 
 /* post page pagination */
 .post-page-numbers {
-  @extend .text-decoration-none;
+  text-decoration: none !important;
   @extend .page-item;
   &.current {
     @extend .page-item, .active;
@@ -225,21 +222,19 @@ table,
 label {
   @extend .form-label;
 }
-input,
-.wp-block-search .wp-block-search__input,
-form input {
+input {
   @extend .form-control;
 }
-
-button,
-.wp-block-search .wp-block-search__button,
-form button {
-  @extend .btn;
-  @extend .btn-primary;
-}
-
 select {
   @extend .form-select;
+}
+.wp-block-search .wp-block-search__input {
+  border-color: $input-border-color !important;
+}
+.wp-block-calendar,
+.wp-block-categories-dropdown {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Meetings plugin styling changes */

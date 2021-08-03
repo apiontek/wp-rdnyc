@@ -82,12 +82,12 @@ class RDNYC_Menu_Walker extends Walker_Nav_Menu {
     parent::start_el($item_html, $item, $depth, $args);
 
     if ( $item->is_dropdown && $depth === 0 ) {
-      $item_html = str_replace( '<a', '<a class="dropdown-toggle top-navbar-grid-main-menu-item-link" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false"', $item_html );
+      $item_html = str_replace( '<a', '<a class="dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false"', $item_html );
       $item_html = str_replace( '</a>', inline_svg( 'bsi-chevron-down', array( 'div_class' => 'icon baseline ms-1' ) ) . '</a>', $item_html );
     }
 
     if ( $item->menu_item_parent && $item->menu_item_parent > 0 && $depth > 0 ) {
-      $item_html = str_replace( '<a', '<a class="dropdown-item top-navbar-grid-main-menu-item-link"', $item_html );
+      $item_html = str_replace( '<a', '<a class="dropdown-item"', $item_html );
     }
 
     $output .= $item_html;

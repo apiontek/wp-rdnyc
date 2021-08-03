@@ -18,7 +18,7 @@ $hamburger-layer-color: $primary !default;
 @import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
 
 /* fix button styling from bootstrap */
-button#top-navbar-grid-toggle-button {
+button#btn-burger {
   -webkit-appearance: inherit;
   &:hover, &:active, &:focus {
     color: inherit;

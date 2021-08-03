@@ -10,8 +10,8 @@ namespace WP_RDNYC;
 
 get_header(); ?>
 
-<main class="rdnyc-index-outer">
-  <div class="content">
+<main class="container-lg d-flex justify-content-center  mt-4 mb-3">
+  <div class="content w-100">
 
     <?php
       // grab search query if there is one
@@ -35,12 +35,14 @@ get_header(); ?>
         if (!is_singular()) : ?>
           <nav class="d-flex justify-content-between" aria-label="Page navigation">
             <div class="nav-previous alignleft">
-              <?php echo inline_svg( 'bsi-chevron-left', array( 'div_class' => 'icon baseline' ) ); ?>
-              <?php next_posts_link( 'Older' ); ?>
+              <?php
+                $txt = inline_svg( 'bsi-chevron-left', array( 'div_class' => 'icon baseline me-2' ) ) . 'Older';
+                next_posts_link( $txt ); ?>
             </div>
             <div class="nav-next alignright">
-              <?php previous_posts_link( 'Newer' ); ?>
-              <?php echo inline_svg( 'bsi-chevron-right', array( 'div_class' => 'icon baseline' ) ); ?>
+              <?php
+                $txt = 'Newer' . inline_svg( 'bsi-chevron-right', array( 'div_class' => 'icon baseline ms-2' ) );
+                previous_posts_link( $txt ); ?>
             </div>
           </nav>
         <?php endif;
