@@ -1,11 +1,29 @@
 #tsml {
+
   .form-control {
+    background-color: $input-bg;
     border: 1px solid $primary;
+    &::-ms-clear,
+    &::-ms-reveal { display: none; }
+    &::-webkit-input-placeholder, /* WebKit, Blink, Edge */
+    &:-ms-input-placeholder, /* Internet Explorer 10-11 */
+    &::-ms-input-placeholder, /* Microsoft Edge */
+    &::placeholder /* Most modern browsers support this now. */
+    { 
+      color:    shade-color($primary, 45%)    !important;
+    }
+    &:-moz-placeholder, /* Mozilla Firefox 4 to 18 */
+    &::-moz-placeholder { /* Mozilla Firefox 19+ */
+      color:    shade-color($primary, 45%)    !important;
+      opacity:  1;
+    }
   }
+
   & .btn, & .btn a {
     text-decoration: none !important;
   }
-  .btn-default {
+
+  .btn.btn-default, a.btn.btn-default {
     color: $spaceblue-800;
     background-color: $primary;
     border: 1px solid $primary;
@@ -14,41 +32,213 @@
     }
     &.toggle-view {
       color: $primary;
-      background-color: inherit;
+      background-color: $dark;
       border: 1px solid $primary;
       &:hover {
-        color: $spaceblue-900;
-        background-color: tint-color($primary, 30%);
+        color: $pagination-hover-color;
+        background-color: $pagination-hover-bg;
         border: 1px solid $primary;
       }
       &.active {
-        color: $spaceblue-900;
+        color: $dark;
         background-color: $primary;
         border: 1px solid $primary;
+        box-shadow: none !important;
         &:hover {
-          color: $spaceblue-900;
+          color: $dark;
           background-color: $primary;
           border: 1px solid $primary;
+          box-shadow: none !important;
         }
       }
     }
   }
-  .table-wrapper {
-    color: #fff;
-  }
+
   .dropdown-menu {
-    color: $gray-200;
-    // background-color: $spaceblue-900;
+    @extend .dropdown-menu;
+    @extend .dropdown-menu-dark;
+    .divider {
+      background-color: $dropdown-dark-divider-bg;
+    }
   }
   .dropdown-menu > li > a {
-    color: $gray-200 !important;
-    text-decoration: none !important;
+    @extend .dropdown-item;
+    color: $gray-300 !important;
   }
-  .dropdown-menu > li > a:hover,
   .dropdown-menu > li.active > a,
   .dropdown-menu > li.active > a:hover {
-    color: $spaceblue-900 !important;
-    text-decoration: none !important;
-    background-color: $primary !important;
+    color: $dropdown-dark-link-active-color !important;
+    background-color: $dropdown-dark-link-active-bg !important;
   }
+  .dropdown-menu > li > a:hover {
+    color: $dropdown-dark-link-hover-color !important;
+    background-color: $dropdown-dark-link-hover-bg !important;
+  }
+
+}
+
+// for some reason this needs to be outside of the above styling
+#tsml {
+  #meetings {
+    .results {
+      @extend .mt-3;
+      table {
+        @extend .table;
+        @extend .table-dark;
+        @extend .table-striped;
+        thead {
+          th {
+            padding: $table-cell-padding-y $table-cell-padding-x !important;
+          }
+        }
+        tbody {
+          tr {
+            @include media-breakpoint-down(md) {
+              background-color: $dark;
+              border-color: $spaceblue-600;
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
+#tsml .table-striped > tbody > tr:nth-of-type(2n+1),
+#tsml #meetings .results table > tbody > tr:nth-of-type(2n+1) {
+  background-color: var(--bs-table-bg) !important;
+  box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+  // @include media-breakpoint-down(md) {
+  //   background-color: var(--bs-table-bg) !important;
+  // }
+}
+#tsml #meetings .results table tbody tr.attendance-online .region,
+#tsml #meetings .results table tbody tr.attendance-inactive .region {
+  opacity: inherit;
+}
+#tsml #meetings .results table tbody tr.attendance-online .location small {
+  color: $success;
+}
+#tsml #meetings .results table tbody tr.attendance-inactive .location small {
+  color: $danger;
+}
+
+#tsml #meetings .results {
+  .alert {
+    @extend .alert;
+  }
+  .alert-primary {
+    @extend .alert-primary;
+  }
+  .alert-secondary {
+    @extend .alert-secondary;
+  }
+  .alert-success {
+    @extend .alert-success;
+  }
+  .alert-danger {
+    @extend .alert-danger;
+  }
+  .alert-warning {
+    @extend .alert-warning;
+  }
+  .alert-info {
+    @extend .alert-info;
+  }
+  .alert-light {
+    @extend .alert-light;
+  }
+  .alert-dark {
+    @extend .alert-dark;
+  }
+}
+
+
+
+#tsml .page-header {
+  border-bottom-color: $spaceblue-600 !important;
+  border-bottom-style: dashed !important;
+}
+
+
+#tsml {
+
+  .panel {
+    @extend .card;
+    background-color: shade-color($gray-800, 50%) !important;
+    color: $body-color !important;
+    &.panel-default {
+      ul {
+        &.list-group {
+          @extend .list-group;
+          @extend .list-group-flush;
+          background-color: shade-color($gray-800, 50%) !important;
+          color: $body-color !important;
+          li, a {
+            &.list-group-item {
+              @extend .list-group-item;
+              @extend .list-group-item-dark;
+              background-color: shade-color($gray-800, 50%) !important;
+              color: $body-color !important;
+              &.meeting-info {
+                ul {
+                  li {
+                    hr {
+                      border-color: $spaceblue-300;
+                    }
+                  }
+                }
+              }
+            }
+            .list-group-item-heading {
+              color: $text-muted;
+            }
+          }
+        }
+      }
+      .panel-heading {
+        @extend .card-body;
+        background-color: shade-color($gray-800, 50%) !important;
+        padding: 1rem 1rem .5rem 1rem !important;
+        .panel-title {
+          @extend .card-title;
+          background-color: inherit !important;
+        }
+      }
+    }
+  }
+
+}
+
+
+#tsml #meeting  a.btn.btn-default {
+  @extend .btn;
+  @extend .btn-outline-primary;
+  @extend .btn-sm;
+  color: $primary !important;
+  margin-bottom: .25rem !important;
+  // background-color: $spaceblue-900 !important;
+  // border: 1px solid $primary !important;
+  svg.icon {
+    height: 1em;
+    width: 1em;
+    top: -0.15em;
+    position: relative;  
+  }
+  &:hover {
+    color: $spaceblue-800 !important;
+    background-color: $primary !important;
+    //   @extend .btn, :hover;
+  //   @extend .btn-primary, :hover;
+  }
+}
+
+#tsml #meeting .panel.panel-expandable.expanded .panel-heading {
+  border-color: $spaceblue-700 !important;
+}
+
+#tsml #meeting #feedback .panel .list-group .list-group-item button {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .btn-sm;
 }

@@ -229,14 +229,14 @@ nav#top-navbar-grid-outer {
               text-transform: inherit !important;
               &:hover {
                 @extend .text-decoration-none;
-                color: $dropdown-link-hover-color;
-                background-color: $dropdown-link-hover-bg;
+                color: $dropdown-dark-link-hover-color;
+                background-color: $dropdown-dark-link-hover-bg;
               }
             }
             &.active {
               .dropdown-item.top-navbar-grid-main-menu-item-link {
-                color: $dropdown-link-active-color;
-                background-color: $dropdown-link-active-bg;
+                color: $dropdown-dark-link-active-color;
+                background-color: $dropdown-dark-link-active-bg;
               }
             }
           }

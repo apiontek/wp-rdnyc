@@ -31,27 +31,27 @@ namespace WP_RDNYC;
     <footer class="d-flex flex-column align-items-center mt-2 px-3 py-3">
 
       <?php
-        // widget content for blog content footers:
-        if (!is_page()) :
+        // // widget content for blog content footers:
+        // if (!is_page()) :
       ?>
 
-      <div id="footer-widgets" class="col-12 col-sm-9 col-md-11 col-lg-10 col-xl-9 col-xxl-8 d-flex flex-column align-items-center">
+      <!-- <div id="footer-widgets" class="col-12 col-sm-9 col-md-11 col-lg-10 col-xl-9 col-xxl-8 d-flex flex-column align-items-center">
         <div class="px-3 pt-3 pb-1">
-          <?php echo get_search_form(); ?>
+          < ?php echo get_search_form(); ?>
         </div>
         <div class="d-flex flex-wrap flex-column flex-md-row justify-content-start justify-content-md-center align-items-start">
 
-          <?php
+          < ?php
             if ( is_active_sidebar( 'footer-widgets' ) ) :
               dynamic_sidebar( 'footer-widgets' );
             endif;
             ?>
 
         </div>
-      </div>
+      </div> -->
 
       <?php
-        endif;
+        // endif;
         // Regular footer content for all but front page:
         ?>
 

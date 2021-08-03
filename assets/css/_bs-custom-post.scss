@@ -4,7 +4,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 /* general styles */
 $link-color:                              $gray-200;
 $link-decoration:                         underline;
-$link-shade-percentage:                   20% !default;
+$link-shade-percentage:                   20%;
 $link-hover-color:                        $primary;
 
 /* tables */
@@ -26,18 +26,31 @@ $input-placeholder-color: shade-color($spaceblue-600, 20%);
 /* pagination */
 $pagination-bg: $dark;
 $pagination-border-color: $spaceblue-600;
-$pagination-active-color: $dark;
 $pagination-hover-color: tint-color($primary, 10%);
-$pagination-hover-bg: tint-color($dark, 7%);
+$pagination-hover-bg: $component-hover-bg;
 $pagination-hover-border-color: $spaceblue-600;
 $pagination-focus-color: tint-color($primary, 10%);
 $pagination-focus-bg: tint-color($dark, 7%);
 
 /* dropdown menus */
 $dropdown-dark-bg: $dark;
-$dropdown-link-color: $light;
-$dropdown-link-hover-color: tint-color($light, 10%);
-$dropdown-link-hover-bg: $spaceblue-700;
+$dropdown-dark-divider-bg: $spaceblue-600;
+$dropdown-dark-link-color: $light;
+$dropdown-dark-link-hover-color: $component-hover-color;
+$dropdown-dark-link-hover-bg: $component-hover-bg; // was $spaceblue-600
+$dropdown-dark-link-active-color: $component-active-color;
+$dropdown-dark-link-active-bg: $component-active-bg;
 
-// $dropdown-link-active-color: tint-color($dark, 10%);
-// $dropdown-link-active-bg: $spaceblue-700;
+/* alerts */
+// scss-docs-start alert-variables
+$alert-padding-y:               $spacer;
+$alert-padding-x:               $spacer;
+$alert-margin-bottom:           1rem;
+$alert-border-radius:           $border-radius;
+$alert-link-font-weight:        $font-weight-bold;
+$alert-border-width:            $border-width;
+$alert-bg-scale:                -40%;
+$alert-border-scale:            -30%;
+$alert-color-scale:             60%;
+$alert-dismissible-padding-r:   $alert-padding-x * 3; // 3x covers width of x plus default padding on either side
+// scss-docs-end alert-variables

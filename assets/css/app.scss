@@ -23,13 +23,14 @@ body {
 }
 
 /* links */
-a,
-#tsml a {
+a {
   &:hover, &:focus {
     text-decoration-color: $gray-200 !important;
   }
 }
-
+#tsml a {
+  @extend a;
+}
 
 
 /* post styling */
