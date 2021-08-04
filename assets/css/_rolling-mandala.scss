@@ -78,7 +78,7 @@
 
 $mandala_height_base: 76vh;
 $mandala_right_shift: math.div($mandala_height_base, -2);
-$mandala_final_opacity: 0.33;
+$mandala_final_opacity: 0.25;
 
 @keyframes roll_in {
   0% {
