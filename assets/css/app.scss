@@ -260,8 +260,9 @@ div.wpforms-container-full .wpforms-form button[type="submit"] {
   font-family: $font-family-handbrush;
 }
 div.wpforms-container-full div.wpforms-confirmation-container-full {
-  @extend .alert;
-  @extend .alert-success;
+  color: $input-focus-color;
+  background-color: rgba(21,28,40,0.85);
+  border-color: $input-border-color;
 }
 select {
   @extend .form-select;
@@ -280,7 +281,7 @@ select {
 
 
 /* Front page layout */
-.rpwwt-widget ul li img { margin: .5em .75em .75em 0; }
+.rpwwt-widget ul li img { margin: .5em .75em .75em 0 !important; }
 main#fp-main > div.fp-grid {
   display: grid !important;
   grid-template-columns: 1fr;

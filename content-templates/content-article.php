@@ -51,7 +51,7 @@ $post_class = esc_attr( implode( ' ', get_post_class( $post_class ) ) );
   <div class="article post-body">
     <?php
       if ( has_post_thumbnail() ) {
-        echo get_the_post_thumbnail( get_the_ID(), 'large', ['class' => 'rounded shadow mb-3 mw-100 h-auto'] );
+        echo get_the_post_thumbnail( get_the_ID(), 'large', ['class' => 'rounded shadow mt-1 mb-4 mw-100 h-auto'] );
       }
 
       the_content();
