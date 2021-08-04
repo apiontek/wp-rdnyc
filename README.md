@@ -24,11 +24,9 @@ Images placed in `assets/images` will be copied to `dist/images` -- however, SVG
 ```js
 import '../raw/rdnyc-logo.svg';
 ```
-This will output an optimized version to `dist/images`
+This will output an optimized version to `dist/images` with `svg-` prefix; these can be used per below:
 
-SVG icons can be pulled into a sprite file (output to `dist/images/icon-sprites.svg`). For this to work, `@import` them in main.js (see examples). Sprite names are set by the config in `webpack.config.js` with prefixes supported for some icon packs ([@mdi/svg](https://www.npmjs.com/package/@mdi/svg), [bootstrap-icons](https://www.npmjs.com/package/bootstrap-icons), [heroicons](https://www.npmjs.com/package/heroicons)). They can then be used for menus (put `icon-<PREFIX>-<ICON-NAME>` in the class for a menu item), or used in the theme php files with the `svg_icon_use($icon_name, $div_class)` function from `custom-functions.php` to get a div containing the correct svg use tag. `$div_class` should usually include `baseline` for proper layout.
-
-#### Including
+#### Using optimized SVGs
 
 SVG images can be implemented two ways:
 
