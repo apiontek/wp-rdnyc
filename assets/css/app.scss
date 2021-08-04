@@ -280,6 +280,7 @@ select {
 
 
 /* Front page layout */
+.rpwwt-widget ul li img { margin: .5em .75em .75em 0; }
 main#fp-main > div.fp-grid {
   display: grid !important;
   grid-template-columns: 1fr;

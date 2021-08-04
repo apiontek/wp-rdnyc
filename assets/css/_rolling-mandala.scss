@@ -78,10 +78,9 @@
 
 $mandala_height_base: 76vh;
 $mandala_right_shift: math.div($mandala_height_base, -2);
-$mandala_final_opacity_base: 0.33;
-$mandala_final_opacity_md: 0.66;
+$mandala_final_opacity: 0.33;
 
-@keyframes roll-in-down-md {
+@keyframes roll_in {
   0% {
     transform: rotate(80deg) translateY(-50%) translateX(-50%);
     opacity: 1.0;
@@ -89,18 +88,7 @@ $mandala_final_opacity_md: 0.66;
 
   100% {
     transform: rotate(0) translateY(-50%) translateX(0px);
-    opacity: $mandala_final_opacity_base;
-  }
-}
-@keyframes roll-in-up-md {
-  0% {
-    transform: rotate(80deg) translateY(-50%) translateX(-50%);
-    opacity: 1.0;
-  }
-
-  100% {
-    transform: rotate(0) translateY(-50%) translateX(0px);
-    opacity: $mandala_final_opacity_md;
+    opacity: $mandala_final_opacity;
   }
 }
 
@@ -113,17 +101,8 @@ $mandala_final_opacity_md: 0.66;
   pointer-events: none;
   z-index: -999;
   transform: translateY(-50%);
-
-  @include media-breakpoint-down(md) {
-    opacity: $mandala_final_opacity_base;
-    animation: roll-in-down-md 1.5s cubic-bezier(0.51, 0.04, 0.68, 1.08);
-  }
-
-  @include media-breakpoint-up(md) {
-    opacity: $mandala_final_opacity_md;
-    animation: roll-in-up-md 1.5s cubic-bezier(0.51, 0.04, 0.68, 1.08);
-  }
-  
+  opacity: $mandala_final_opacity;
+  animation: roll_in 1.5s cubic-bezier(0.51, 0.04, 0.68, 1.08);
 }
 
 
