@@ -11,7 +11,7 @@ Originally forked from [WP 73k](https://github.com/apiontek/wp-73k/), itself for
 
 1. Clone or download the project into your `themes` directory (`./wp-content/themes`)
 2. Run `composer install`
-3. Run `npm install` 
+3. Run `npm install` if developing
 4. Set environment variables for BrowserSyncPlugin to the domain/ports you need (see `webpack.config.js` for variables needed).
 5. Run `npm run start` to begin development server, `npm run dev` for simple dev build, `npm run prod` for a production build, or `npm run build` to build both dev & prod concurrently.
 
