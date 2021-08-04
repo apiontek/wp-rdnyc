@@ -3,9 +3,29 @@
   a {
     @extend a;
   }
+  .page-header { margin: 20px 0; }
   .form-control {
     background-color: $input-bg;
     border: 1px solid $primary;
+    &[disabled] {
+      background-color: tint-color($input-bg, 10%);
+      border: 1px solid shade-color($primary, 35%);
+      &::-ms-clear,
+      &::-ms-reveal { display: none; }
+      &::-webkit-input-placeholder, /* WebKit, Blink, Edge */
+      &:-ms-input-placeholder, /* Internet Explorer 10-11 */
+      &::-ms-input-placeholder, /* Microsoft Edge */
+      &::placeholder /* Most modern browsers support this now. */
+      { 
+        color:    shade-color($gray-200, 40%)    !important;
+      }
+      &:-moz-placeholder, /* Mozilla Firefox 4 to 18 */
+      &::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color:    shade-color($gray-200, 40%)    !important;
+        opacity:  1;
+      }
+  
+    }
     &::-ms-clear,
     &::-ms-reveal { display: none; }
     &::-webkit-input-placeholder, /* WebKit, Blink, Edge */
@@ -47,12 +67,12 @@
         color: $dark;
         background-color: $primary;
         border: 1px solid $primary;
-        box-shadow: none !important;
+        box-shadow: null !important;
         &:hover {
           color: $dark;
           background-color: tint-color($primary, $btn-hover-bg-tint-amount) !important;
           border: 1px solid $primary;
-          box-shadow: none !important;
+          box-shadow: null !important;
         }
       }
     }
@@ -82,13 +102,24 @@
 }
 
 /* 12 step meeting list (tsml) main table & widget table styling */
-.tsml-widget-upcoming table.tsml_next_meetings tbody tr td {
-  margin-left: .5rem;
-  &:first-of-type {
-    margin-left: 0 !important;
+section.tsml-widget-upcoming.widget_tsml_widget_upcoming.widget div.tsml-no-upcoming-meetings {
+  color: $input-focus-color;
+  // background-color: $input-bg;
+  background-color: rgba(21,28,40,0.85);
+  border-color: $input-border-color;
+}
+.tsml-widget-upcoming {
+  h2 { margin-bottom: 1rem; }
+  table.tsml_next_meetings {
+    opacity: 0.90;
+    tbody tr td {
+      margin-left: .5rem;
+      &:first-of-type {
+        margin-left: 0 !important;
+      }
+    }
   }
 }
-.tsml-widget-upcoming h2 { margin-bottom: 1rem; }
 #tsml #meetings .results table,
 .tsml-widget-upcoming table.tsml_next_meetings {
   @extend .table;
@@ -117,9 +148,10 @@
 
 #tsml .results {
   .alert-warning {
-    background-color: #f5e2a7;
-    border-color: #f3dd99;
-    color: #5f532c;
+    color: $input-focus-color;
+    // background-color: $input-bg;
+    background-color: rgba(21,28,40,0.85);
+    border-color: $input-border-color;
   }
 }
 

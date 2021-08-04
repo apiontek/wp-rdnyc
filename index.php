@@ -10,7 +10,7 @@ namespace WP_RDNYC;
 
 get_header(); ?>
 
-<main class="container-lg d-flex justify-content-center  mt-4 mb-3">
+<main class="container-lg d-flex justify-content-center  mt-0 mt-md-3 mb-3">
   <div class="content w-100">
 
     <?php

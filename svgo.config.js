@@ -4,14 +4,14 @@ module.exports = {
     'cleanupAttrs',
     'mergeStyles',
     'inlineStyles',
-    'removeDoctype',
+    // 'removeDoctype',
     'removeXMLProcInst',
     'removeComments',
     'removeMetadata',
     'removeTitle',
     'removeDesc',
     'removeUselessDefs',
-    'removeXMLNS',
+    // 'removeXMLNS',
     'removeEditorsNSData',
     'removeEmptyAttrs',
     'removeHiddenElems',
@@ -46,21 +46,21 @@ module.exports = {
     {
       name: 'removeAttrs',
       params: {
-        attrs: 'svg:id'
+        attrs: ['svg:id', 'svg:style', 'g:id']
       }
     },
     // 'removeAttributesBySelector',
     // 'removeElementsByAttr',
     // 'addClassesToSVGElement',
-    {
-      name: 'addClassesToSVGElement',
-      params: {
-        className: '{{class-placeholder}}'
-      }
-    },
-    // 'addAttributesToSVGElement',
+    // {
+    //   name: 'addClassesToSVGElement',
+    //   params: {
+    //     className: '{{class-placeholder}}'
+    //   }
+    // },
+    // // 'addAttributesToSVGElement',
     // 'removeOffCanvasPaths',
-    'removeStyleElement',
+    // 'removeStyleElement',
     // 'removeScriptElement',
     // 'reusePaths',
   ]

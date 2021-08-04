@@ -12,6 +12,10 @@ const isProduction          = 'production' === process.env.NODE_ENV;
 let prefix = isProduction ? '.min' : '';
 
 const config = {
+  performance: {
+    maxEntrypointSize: 320000,
+    maxAssetSize: 640000,
+  },
   entry: './assets/js/main.js',
   output: {
     filename: `[name]${prefix}.js`,
@@ -186,6 +190,9 @@ function getCSSWhitelistPatterns() {
     /^h.$/,
     /^pre$/,
     /^code$/,
+    /^fp-(.*)$/,
+    /^rpwwt-(.*)$/,
+    /^dropdown-(.*)$/,
   ];
 }
 

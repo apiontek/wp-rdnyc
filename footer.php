@@ -13,9 +13,9 @@ namespace WP_RDNYC;
 
 ?>
 
-    <footer class="d-flex flex-column align-items-center mt-2 px-3 py-3">
+    <footer class="footer mt-auto py-3 text-center">
 
-      <span class="text-gray-400 mt-3">&copy; <?php echo date("Y") ?> Recovery Dharma NYC</span>
+      <span class="text-gray-400 fs-smaller">&copy; <?php echo date("Y") ?> Recovery Dharma NYC</span>
 
     </footer>
 

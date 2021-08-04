@@ -42,7 +42,18 @@ namespace WP_RDNYC;
 
 <body <?php body_class(); ?> itemscope itemtype="https://schema.org/WebPage">
 
-  <nav id="nt-out" class="container-fluid  mt-ltmd-125 mt-md-5  mb-4 mb-sm-4-2 mb-lg-4-25 mb-xl-5 mb-xxl-7">
+  <?php
+    if (is_front_page()) :
+  ?>
+    <img 
+      src="<?php echo get_template_directory_uri() . '/dist/images/svg-roll-mandala.svg'; ?>"
+      class="img roll-mandala" aria_hidden="true"
+    >
+  <?php
+    endif;
+  ?>
+
+  <nav id="nt-out" class="container-fluid  mb-4 mb-sm-4-2 mb-lg-4-25 mb-xl-5 mb-xxl-7">
 
     <div class="nt-brand">
       <h1>

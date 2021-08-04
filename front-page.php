@@ -10,7 +10,7 @@ namespace WP_RDNYC;
 
 get_header(); ?>
 
-<main id="fp-main" class="container-xl mt-4 mt-md-6 mt-lg-7 mb-3">
+<main id="fp-main" class="container-xl mt-0 mt-md-3">
   <div class="fp-grid">
 
 

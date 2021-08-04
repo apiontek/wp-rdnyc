@@ -4,9 +4,9 @@ $blue:    #0d6efd;
 $indigo:  #6610f2;
 $purple:  #6f42c1;
 $pink:    #d63384;
-$red:     #eb2744;
+$red:     #DD3940;
 $orange:  #fd7e14;
-$yellow:  #EECF6D;
+$yellow:  #FFFF82;
 $green:   #1db954;
 $teal:    #20c997;
 $cyan:    #0dcaf0;
@@ -47,7 +47,7 @@ $spaceblue-900: #151c28;
 
 // scss-docs-start theme-color-variables
 $primary:       #51A39F;
-$secondary:     #b198bf;
+$secondary:     $orange;
 $success:       $green;
 $info:          $cyan;
 $warning:       $yellow;

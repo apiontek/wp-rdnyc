@@ -1,58 +1,41 @@
 # RDNYC WordPress Bootstrap 5/PurgeCSS Theme
-The WordPress theme for rdnyc.org, based on Bootstrap 5 and PurgeCSS.
+The WordPress theme for recoverydharma.org, based on Webpack 5, Bootstrap 5, and some development conveniences.
 
-## Requirements
+Originally forked from [WP 73k](https://github.com/apiontek/wp-73k/), itself forked from [WP Tailwind](https://github.com/cjkoepke/wp-tailwind)
+
+## Development Requirements
 - [NodeJS](https://nodejs.org)
 - [Composer](https://getcomposer.org)
 
-## How to get started
-1. Clone or [download](https://github.com/apiontek/wp-rdnyc/archive/refs/heads/master.zip "Download the WP RDNYC Zip") the project onto your `themes` directory `(./wp-content/themes)`
-2. Run a find/replace for the following strings:
-- `wp-rdnyc`
-- `WP_RDNYC`
-- `wp_rdnyc_`
-3. Run `composer install`
-4. Run `npm install` 
-5. Set environment variables for BrowserSyncPlugin to the domain/ports you need (see `webpack.config.js` for variables needed).
-6. Run `npm start` to begin development server.
+### How to get started
 
-## Webpack
-The theme uses Webpack as its bundler with ES6 modules for JavaScript files.
+1. Clone or download the project into your `themes` directory (`./wp-content/themes`)
+2. Run `composer install`
+3. Run `npm install` 
+4. Set environment variables for BrowserSyncPlugin to the domain/ports you need (see `webpack.config.js` for variables needed).
+5. Run `npm run start` to begin development server, `npm run dev` for simple dev build, `npm run prod` for a production build, or `npm run build` to build both dev & prod concurrently.
 
-### SpriteLoaderPlugin
+### SVGs
+
+#### Optimization
+
+Images placed in `assets/images` will be copied to `dist/images` -- however, SVGs can be optimized by placing them in `assets/raw` and importing them in `main.js`, e.g.:
+
+```js
+import '../raw/rdnyc-logo.svg';
+```
+This will output an optimized version to `dist/images`
 
 SVG icons can be pulled into a sprite file (output to `dist/images/icon-sprites.svg`). For this to work, `@import` them in main.js (see examples). Sprite names are set by the config in `webpack.config.js` with prefixes supported for some icon packs ([@mdi/svg](https://www.npmjs.com/package/@mdi/svg), [bootstrap-icons](https://www.npmjs.com/package/bootstrap-icons), [heroicons](https://www.npmjs.com/package/heroicons)). They can then be used for menus (put `icon-<PREFIX>-<ICON-NAME>` in the class for a menu item), or used in the theme php files with the `svg_icon_use($icon_name, $div_class)` function from `custom-functions.php` to get a div containing the correct svg use tag. `$div_class` should usually include `baseline` for proper layout.
 
-## Syntax Highlighting
+#### Including
 
-This theme supports server-side syntax highlighting via the [Syntax-highlighting Code Block](https://wordpress.org/plugins/syntax-highlighting-code-block/) plugin. In `classes.php` the plugin-provided styling is disabled, and the theme incorporates sass styling from the highlight.js node package, imported in `_code-highlight.scss` (to change the highlight style, change the import there).
+SVG images can be implemented two ways:
 
-However, the plugin doesn't support highlighting inline code, but I like that option, so the theme also incorporates highlight.js in `main.js` with a DOM Loaded action to highlight any code blocks tagged with the class `to-highlight` (must also have `language-$LANG` class) -- this should be done in WordPress in the editor, where you can edit a paragraph as HTML and add the classes (e.g. `<code class="to-highlight language-python">`).
-
-## Static Files via nginx
-
-Static files under `assets/_root` cal be served by nginx with location config like below - otherwise they (or your versions of whatever you want served from your WordPress site root) should be moved to your WordPress site root.
-
-```conf
-location ~ /(robots.txt|favicon.ico|android-chrome-192x192.png|android-chrome-512x512.png|browserconfig.xml|mstile-150x150.png) {
-    root /var/www/dev1/wordpress-5.8-RC2/wp-content/themes/wp-rdnyc/assets/_root/;
-    allow all;
-    log_not_found off;
-    access_log off;
-}
-```
-
-## Deployment 
-
-```bash
-npm run build
-```
-This will run both a production and development set of webpack tasks. The enqueue hook will load the correct version of the JS file, based on whether your development/staging server's `SCRIPT_DEBUG` constant is set to `true`.
-
-## Bootstrap
-
-You can customize Bootstrap SCSS & JavaScript imports in the `assets/css/app.scss` and `assets/js/main.js` files.
-
-## PurgeCSS
-
-*WP RDNYC* uses PurgeCSS to remove unused styles from the production build. It scans your project directory for strings that match SCSS declarations. You can modify the directories to search for in the `webpack.config.js` file. **Always check your production build to make sure styles you were developing with compiled correctly.**
+- A normal `<img src="<?php echo get_template_directory_uri() . '/dist/images/svg-roll-mandala.svg'; ?>" ... >` tag
+  - This cannot be colored but preserves SVG styling
+  - Since resource is loaded separately, it can be cached.
+- An inline SVG using the `inline_svg( $svg_name, $atts )` function in `custom-functions.php` -- see that file for supported `$atts` array keys.
+  - This can be colored from parent element
+  - SVG class requires `{{class-placeholder}}` for 'svg_class' `$atts` key to work
+  - Since resource is inline, cannot be cached.

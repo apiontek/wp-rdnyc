@@ -28,12 +28,6 @@
 }
 
 /* general additional spacing style */
-.mt-ltmd-125 {
-  @include media-breakpoint-down(md) {
-    margin-top: 1.25rem !important;
-  }
-}
-
 /* general additional border style */
 .border-bottom {
   &.border-dashed {

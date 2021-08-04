@@ -2,7 +2,8 @@
 import '../css/app.scss'
 
 // Import svg files for webpack handling
-import '../raw/rdnyc-logo.svg'; // rdnyc logo
+import '../raw/rdnyc-logo.svg';           // rdnyc logo
+import '../raw/roll-mandala.svg';         // rolling mandala decoration
 // other:
 import '../../node_modules/bootstrap-icons/icons/chevron-down.svg';
 import '../../node_modules/bootstrap-icons/icons/chevron-left.svg';
