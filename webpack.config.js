@@ -180,6 +180,8 @@ function getCSSWhitelistPatterns() {
     /^figure$/,
     /^blockquote$/,
     /^tsml(-.*)?$/,
+    /^collapse$/,
+    /^collapsing$/,
     /^label$/,
     /^input$/,
     /^textarea$/,
