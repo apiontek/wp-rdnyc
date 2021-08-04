@@ -22,7 +22,6 @@ add_action( 'after_setup_theme', function () {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( [
 		'navbar-main-menu' => __( 'Navbar Main Menu', 'wp-rdnyc' ),
-		// 'footer'  => __( 'Footer Menu', 'wp-rdnyc' ),
 	] );
 
 	// Switch default core markup for search form, comment form, and comments to output valid HTML5.

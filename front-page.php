@@ -9,28 +9,19 @@
 namespace WP_RDNYC;
 
 get_header(); ?>
-<main class="container-fluid">
-  <div class="d-flex flex-column-reverse flex-lg-row align-items-lg-end mt-sm-3 mt-md-4 pt-md-4 mt-lg-5 pt-lg-5 pb-5" id="tek-front-page">
 
-  <?php
-    if ( have_posts() ) {
-      while ( have_posts() ) {
-        the_post(); ?>
+<main id="fp-main" class="container-xl mt-4 mt-md-6 mt-lg-7 mb-3">
+  <div class="fp-grid">
 
-    <div class="col-auto mt-3 mt-lg-0">
-      <?php echo get_the_post_thumbnail( get_the_ID(), 'large' ); ?>
-    </div>
 
-    <!-- the_content(); -->
-    <div class="col-auto justify-content-start ms-lg-3">
-      <?php the_content(); ?>
-    </div>
+    <?php
+      if ( is_active_sidebar( 'front-page-widgets' ) ) :
+        dynamic_sidebar( 'front-page-widgets' );
+      endif;
+      ?>
 
-  <?php }
-      }
-    ?>
 
   </div>
 </main>
 <?php
-get_footer('', array('frontpage'=>true));
+get_footer();

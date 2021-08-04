@@ -52,16 +52,8 @@ const config = {
         type: 'asset/resource',
         generator: {
           filename: (pathData) => {
-            if (pathData.filename.includes('@mdi')) {
-              return 'images/mdi-[name][ext]';
-            } else if (pathData.filename.includes("bootstrap-icons")) {
+            if (pathData.filename.includes("bootstrap-icons")) {
               return 'images/bsi-[name][ext]';
-            } else if (pathData.filename.includes("heroicons")) {
-              if (pathData.filename.includes("outline")) {
-                return 'images/hio-[name][ext]';
-              } else {
-                return 'images/his-[name][ext]';
-              }
             } else {
               return 'images/svg-[name][ext]';
             }
@@ -183,7 +175,7 @@ function getCSSWhitelistPatterns() {
     /^children(-.*)?$/,
     /^figure$/,
     /^blockquote$/,
-    /^tsml$/,
+    /^tsml(-.*)?$/,
     /^label$/,
     /^input$/,
     /^textarea$/,

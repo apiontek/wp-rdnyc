@@ -16,9 +16,9 @@ add_action( 'widgets_init', function () {
   ] );
 
   register_sidebar( [
-    'name'            => esc_html( 'Footer' ),
-    'id'              => 'footer-widgets',
-    'description'     => 'Blog page footer area for widgets',
+    'name'            => esc_html( 'Front Page' ),
+    'id'              => 'front-page-widgets',
+    'description'     => 'Front page widget area',
     'before_widget'   => '<section id="%1$s" class="%2$s widget">',
     'after_widget'    => '</section>',
   ] );

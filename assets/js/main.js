@@ -18,9 +18,8 @@ import 'bootstrap/js/dist/dropdown';
 // import navbar burger code
 import "./_hamburger-helper";
 
-// highlight any code blocks tagged with class 'to-highlight'
+// adjust some content
 document.addEventListener('DOMContentLoaded', (event) => {
-  document.querySelectorAll('code.to-highlight').forEach((el) => {
-    hljs.highlightElement(el);
-  });
+  let tsmlwidget_morelink = document.querySelector('.tsml-widget-upcoming.widget_tsml_widget_upcoming.widget p a');
+  tsmlwidget_morelink.innerHTML = 'View More Meetings'
 });

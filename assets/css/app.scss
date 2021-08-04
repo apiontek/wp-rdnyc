@@ -31,7 +31,8 @@ a {
 
 
 /* post styling */
-article.post.sticky {
+article.post.sticky,
+.rpwwt-widget li.rpwwt-sticky {
   border-radius: .25rem !important;
   background-color: shade-color($gray-800, 50%);
   border-bottom: inherit !important;
@@ -258,3 +259,50 @@ select {
 
 /* Meetings plugin styling changes */
 @import "meetings-plugin";
+
+
+/* Front page layout */
+main#fp-main > div.fp-grid {
+  display: grid !important;
+  grid-template-columns: 1fr;
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  @include media-breakpoint-up(md) {
+    grid-template-columns: 20rem auto;
+  }
+  > section.tsml-widget-upcoming.widget_tsml_widget_upcoming.widget {
+    @include media-breakpoint-up(md) {
+      grid-column-start: 1;
+      grid-row-start: 1;
+    }
+  }
+  h2.widgettitle {
+    font-size: 1.75rem;
+    font-weight: 300 !important;
+    color: $text-muted;
+    margin-bottom: 0.5rem;
+    @include media-breakpoint-up(sm) {
+      margin-bottom: 1rem;
+    }
+  }
+  .rpwwt-widget {
+    li.rpwwt-sticky {
+      padding: 0.75rem !important;
+    }
+    .rpwwt-post-title {
+      font-size: 1.4rem;
+    }
+    .rpwwt-post-date {
+      color: $text-muted;
+      font-size: smaller;
+    }
+  }
+  .tsml-widget-upcoming.widget_tsml_widget_upcoming.widget p {
+    text-align: right;
+    a {
+      @extend .btn;
+      @extend .btn-primary;
+      font-family: $font-family-handbrush;
+    }
+  }
+}

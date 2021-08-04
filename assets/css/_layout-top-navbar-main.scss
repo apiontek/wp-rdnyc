@@ -21,6 +21,11 @@
     max-width: 960px;
   }
 }
+.container-xl:not(.container-lg) {
+  // @include media-breakpoint-up(xl) {
+    max-width: 1140px !important;
+  // }
+}
 
 /*
  * top navbar css grid layout

@@ -1,3 +1,4 @@
+/* 12 step meeting list (tsml) general & filter controls */
 #tsml {
   a {
     @extend a;
@@ -80,8 +81,16 @@
 
 }
 
-// for some reason this needs to be outside of the above styling
-#tsml #meetings .results table {
+/* 12 step meeting list (tsml) main table & widget table styling */
+.tsml-widget-upcoming table.tsml_next_meetings tbody tr td {
+  margin-left: .5rem;
+  &:first-of-type {
+    margin-left: 0 !important;
+  }
+}
+.tsml-widget-upcoming h2 { margin-bottom: 1rem; }
+#tsml #meetings .results table,
+.tsml-widget-upcoming table.tsml_next_meetings {
   @extend .table;
   @extend .table-dark;
   @extend .table-striped;
@@ -105,7 +114,7 @@
     }
   }
 }
-      
+
 #tsml .results {
   .alert-warning {
     background-color: #f5e2a7;
