@@ -142,6 +142,9 @@ section.tsml-widget-upcoming.widget_tsml_widget_upcoming.widget div.tsml-no-upco
       &.attendance-inactive .location small {
         color: $danger;
       }
+      span.meeting_types {
+        color: $secondary;
+      }
     }
   }
 }
