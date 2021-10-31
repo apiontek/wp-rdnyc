@@ -120,6 +120,10 @@ section.tsml-widget-upcoming.widget_tsml_widget_upcoming.widget div.tsml-no-upco
     }
   }
 }
+.table > :not(:first-child),
+.tsml-widget-upcoming table.tsml_next_meetings > :not(:first-child) {
+  border-top: inherit;
+}
 #tsml #meetings .results table,
 .tsml-widget-upcoming table.tsml_next_meetings {
   @extend .table;
