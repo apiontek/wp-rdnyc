@@ -170,6 +170,13 @@ figure.wp-caption {
   max-width: 100%;
   height: auto;
 }
+.wp-block-image figcaption {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-style: italic;
+  font-size: smaller;
+  color: $text-muted;
+}
 .btn-primary {
   color: $dark;
   box-shadow: inherit !important;
