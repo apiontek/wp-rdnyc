@@ -1,109 +1,38 @@
-/* rolling mandala */
-// @-webkit-keyframes roll-in {
-//   0% {
-//     -webkit-transform: rotate(90deg) translateY(-50%) translateX(-50%);
-//     -moz-transform: rotate(90deg) translateY(-50%) translateX(-50%);
-//     -ms-transform: rotate(90deg) translateY(-50%) translateX(-50%);
-//     -o-transform: rotate(90deg) translateY(-50%) translateX(-50%);
-//     transform: rotate(90deg) translateY(-50%) translateX(-50%);
-//   }
-
-//   100% {
-//     -webkit-transform: rotate(0) translateY(-50%) translateX(0px);
-//     -moz-transform: rotate(0) translateY(-50%) translateX(0px);
-//     -ms-transform: rotate(0) translateY(-50%) translateX(0px);
-//     -o-transform: rotate(0) translateY(-50%) translateX(0px);
-//     transform: rotate(0) translateY(-50%) translateX(0px);
-//   }
-// }
-// @-moz-keyframes roll-in {
-//   0% {
-//     -webkit-transform: rotate(90deg) translateY(-50%) translateX(-50%);
-//     -moz-transform: rotate(90deg) translateY(-50%) translateX(-50%);
-//     -ms-transform: rotate(90deg) translateY(-50%) translateX(-50%);
-//     -o-transform: rotate(90deg) translateY(-50%) translateX(-50%);
-//     transform: rotate(90deg) translateY(-50%) translateX(-50%);
-//   }
-
-//   100% {
-//     -webkit-transform: rotate(0) translateY(-50%) translateX(0px);
-//     -moz-transform: rotate(0) translateY(-50%) translateX(0px);
-//     -ms-transform: rotate(0) translateY(-50%) translateX(0px);
-//     -o-transform: rotate(0) translateY(-50%) translateX(0px);
-//     transform: rotate(0) translateY(-50%) translateX(0px);
-//   }
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-// @keyframes roll-in {
-//   0% {
-//     transform: rotate(90deg) translateY(-50%) translateX(-50%);
-//   }
-
-//   100% {
-//     transform: rotate(0) translateY(-50%) translateX(0px);
-//   }
-// }
-// .roll-mandala {
-//   position: absolute;
-//   right: $mandala_distance_right;
-//   top: 50%;
-//   width: $mandala_width;
-//   pointer-events: none;
-//   opacity: .5;
-//   z-index: -999;
-//   animation: roll-in 2s cubic-bezier(0.51, 0.04, 0.68, 1.08);
-//   transform: translateY(-50%);
-// }
-
-
-
-
-
-
-
 @use "sass:math";
 
-
-$mandala_height_base: 76vh;
-$mandala_right_shift: math.div($mandala_height_base, -2);
-$mandala_final_opacity: 0.25;
+$mandala_final_opacity: 0.20;
 
 @keyframes roll_in {
   0% {
-    transform: rotate(80deg) translateY(-50%) translateX(-50%);
+    transform: rotate(80deg) translateY(-40vh) translateX(-30vw);
     opacity: 1.0;
   }
 
   100% {
-    transform: rotate(0) translateY(-50%) translateX(0px);
+    transform: rotate(0) translateY(-40vh) translateX(0px);
     opacity: $mandala_final_opacity;
   }
 }
 
+$xs_mandala_height: 170vw;
+$md_mandala_height: 120vw;
+
 .roll-mandala {
-  height: $mandala_height_base;
+  height: $xs_mandala_height;
   max-width: inherit !important;
   position: absolute;
-  right: $mandala_right_shift;
+  right: math.div($xs_mandala_height, -2.1);
   top: 50%;
   pointer-events: none;
   z-index: -999;
-  transform: translateY(-50%);
+  transform: translateY(-40vh);
   opacity: $mandala_final_opacity;
   animation: roll_in 1.5s cubic-bezier(0.51, 0.04, 0.68, 1.08);
 }
 
-
-
+@include media-breakpoint-up(sm) {
+  .roll-mandala {
+    height: $md_mandala_height;
+    right: math.div($md_mandala_height, -2.1);
+  }
+}

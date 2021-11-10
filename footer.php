@@ -21,5 +21,16 @@ namespace WP_RDNYC;
 
   <?php wp_footer(); ?>
 
+  <?php
+    if (is_front_page()) :
+  ?>
+    <img 
+      src="<?php echo get_template_directory_uri() . '/dist/images/svg-roll-mandala.svg'; ?>"
+      class="img roll-mandala" aria_hidden="true"
+    >
+  <?php
+    endif;
+  ?>
+
   </body>
 </html>
