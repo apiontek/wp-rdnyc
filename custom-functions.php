@@ -41,7 +41,7 @@ function inline_svg( $svg_name, $atts = array() ) {
   ), $atts));
 
   // load initial svg content
-  $svg_content = file_get_contents( get_template_directory_uri() . '/dist/images/' . $svg_name . '.svg' );
+  $svg_content = file_get_contents( get_template_directory() . '/dist/images/' . $svg_name . '.svg' );
 
   // replace svg class
   $svg_content = str_replace('{{class-placeholder}}', $svg_class, $svg_content);
