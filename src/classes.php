@@ -93,7 +93,8 @@ class RDNYC_Menu_Walker extends Walker_Nav_Menu {
     $output .= $item_html;
   }
 
-  function display_element($element, &$children_elements, $max_depth, $depth = 0, $args, &$output) {
+  function display_element($element, &$children_elements, $max_depth, $depth, $args, &$output) {
+    if (!$depth) { $depth = 0; }
     if ( $element->current )
       $element->classes[] = 'active';
 
