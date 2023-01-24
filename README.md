@@ -12,8 +12,7 @@ Originally forked from [WP 73k](https://github.com/apiontek/wp-73k/), itself for
 1. Clone or download the project into your `themes` directory (`./wp-content/themes`)
 2. Run `composer install`
 3. Run `npm install` if developing
-4. Set environment variables for BrowserSyncPlugin to the domain/ports you need (see `webpack.config.js` for variables needed).
-5. Run `npm run start` to begin development server, `npm run dev` for simple dev build, `npm run prod` for a production build, or `npm run build` to build both dev & prod concurrently.
+4. Run `npm run watch` to begin watching & rebuilding for development, `npm run dev` for simple dev build, `npm run prod` for a production build, or `npm run build` to build both dev & prod concurrently.
 
 ### SVGs
 
@@ -24,6 +23,7 @@ Images placed in `assets/images` will be copied to `dist/images` -- however, SVG
 ```js
 import '../raw/rdnyc-logo.svg';
 ```
+
 This will output an optimized version to `dist/images` with `svg-` prefix; these can be used per below:
 
 #### Using optimized SVGs

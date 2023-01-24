@@ -1,7 +1,7 @@
 {
   "name": "wp-rdnyc-theme",
   "author": "Adam Piontek <adam@73k.us> (https://73k.us)",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Wordpress theme for Recovery Dharma NYC",
   "homepage": "https://github.com/apiontek/wp-rdnyc",
   "contributors": [
@@ -13,7 +13,6 @@
   ],
   "main": "./assets/js/main.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development SERVER=true webpack --watch",
     "watch": "cross-env NODE_ENV=development webpack --watch",
     "dev": "cross-env NODE_ENV=development webpack",
     "prod": "cross-env NODE_ENV=production webpack",
@@ -33,8 +32,6 @@
     "@babel/preset-env": "^7.x",
     "autoprefixer": "^10.x",
     "babel-loader": "^8.x",
-    "browser-sync": "^2.x",
-    "browser-sync-webpack-plugin": "^2.x",
     "concurrently": "^6.x",
     "copy-webpack-plugin": "^10.0.0",
     "cross-env": "^7.x",

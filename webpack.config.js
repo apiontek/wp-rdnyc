@@ -3,7 +3,6 @@ const glob                  = require("glob-all");
 const MiniCssExtractPlugin  = require('mini-css-extract-plugin');
 const CssMinimizerPlugin    = require("css-minimizer-webpack-plugin");
 const CopyWebpackPlugin     = require('copy-webpack-plugin');
-const BrowserSyncPlugin     = require('browser-sync-webpack-plugin');
 const PurgecssPlugin        = require("purgecss-webpack-plugin");
 
 const isProduction          = 'production' === process.env.NODE_ENV;
@@ -113,27 +112,6 @@ const config = {
         }),
       ]
       : []
-  )
-}
-
-// Fire up a local server if requested
-if (process.env.SERVER) {
-  config.plugins.push(
-    new BrowserSyncPlugin(
-      {
-        proxy: process.env.BSYNC_PROXY || 'localhost',
-        files: [
-          '**/*.php',
-          '**/*.scss'
-        ],
-        port: process.env.BSYNC_PORT || 8080,
-        host: process.env.BSYNC_HOST || '127.0.0.1',
-        listen: process.env.BSYNC_LISTEN || '0.0.0.0',
-        // notify: false,
-        // open: false,
-        ui: { port: process.env.BSYNC_UI_PORT || 8081 }
-      }
-    )
   )
 }
 
